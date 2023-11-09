@@ -35,7 +35,7 @@ section {
   padding: 2em;
   padding-top: .8em;
   background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.236);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
 }
 
@@ -46,6 +46,7 @@ h2, h3 {
 footer {
   text-align: center;
   padding: 2em;
+  padding-top: 90%;
   background-color: #032560;
   color: #fff;
   offset-anchor: end;
