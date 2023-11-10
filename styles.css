@@ -63,10 +63,56 @@ and (max-device-width : 480px) {
   }
 
   aside {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%; /* Make it take the full width */
     z-index: 1000; /* Adjust the z-index as needed */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .container {
+    display: flex;
+  }
+
+  header {
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+
+  main {
+    flex: 3;
+    overflow-y: auto; /* Allow scrolling within the main content */
+    background-color: #366CA0;
+  }
+
+  section {
+    flex: 1;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 2em;
+    padding-top: .8em;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+  }
+
+  h2, h3 {
+    color: #366CA0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2em;
+    padding-top: 90%;
+    background-color: #032560;
+    color: #fff;
+    offset-anchor: end;
+    padding-bottom: 10000%;
   }
 }
