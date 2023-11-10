@@ -54,3 +54,11 @@ footer {
   offset-anchor: end;
   padding-bottom: 10000%;
 }
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  body {
+    overflow: auto;
+  }
+}
