@@ -11,7 +11,7 @@ body {
 }
 
 aside {
-  flex: 1;
+  flex: .8;
   background-color: #032560;
   color: #fff;
   text-align: center;
@@ -30,6 +30,8 @@ main {
 }
 
 section {
+  flex: 1;
+  flex-direction: column;
   max-width: 800px;
   margin: 2em auto;
   padding: 2em;
@@ -50,4 +52,5 @@ footer {
   background-color: #032560;
   color: #fff;
   offset-anchor: end;
+  padding-bottom: 10000%;
 }
