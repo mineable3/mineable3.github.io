@@ -61,4 +61,12 @@ and (max-device-width : 480px) {
   body {
     overflow: auto;
   }
+
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Make it take the full width */
+    z-index: 1000; /* Adjust the z-index as needed */
+  }
 }
