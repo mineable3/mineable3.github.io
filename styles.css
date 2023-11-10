@@ -58,24 +58,8 @@ footer {
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
-  body {
+  .container {
+    display: flex;
     overflow: auto;
-  }
-
-  aside {
-    top: 0;
-    left: 0;
-    width: 100%; /* Make it take the full width */
-    z-index: 1000; /* Adjust the z-index as needed */
-  }
-
-  footer {
-    text-align: center;
-    padding: 2em;
-    padding-top: 5%;
-    background-color: #032560;
-    color: #fff;
-    offset-anchor: end;
-    padding-bottom: 10%;
   }
 }
