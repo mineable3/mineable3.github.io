@@ -62,7 +62,7 @@
                         "siteRevision": 33,
                         "siteType": "UGC",
                         "dc": "42",
-                        "isResponsive": false,
+                        "isResponsive": true,
                         "editorName": "Unknown",
                         "sessionId": "80a1d466-bc2d-4478-b17c-167270ba30a7",
                         "isSEO": false,
@@ -568,7 +568,7 @@
             body.device-mobile-optimized:not(.responsive) #SITE_CONTAINER {
                 margin-left: auto;
                 margin-right: auto;
-                overflow-x: visible;
+                overflow-x: hidden;
                 position: relative;
                 width: 320px
             }
@@ -588,7 +588,7 @@
 
             @supports(overflow: clip) {
                 body.device-mobile-optimized #site-root {
-                    overflow-x:clip;
+                    overflow-x: clip;
                     overflow-y: clip
                 }
             }
@@ -751,7 +751,7 @@
             }
 
             body {
-                overflow-x: auto;
+                overflow-x: hidden;
                 overflow-y: scroll
             }
 
@@ -1358,7 +1358,7 @@
             }
 
             body:not(.responsive) .JsJXaX {
-                overflow-x: clip
+                overflow-x: hidden
             }
 
             [data-view-transition=page-transition] .JsJXaX {
@@ -11614,7 +11614,7 @@
                     "siteRevision": 33,
                     "siteType": "UGC",
                     "dc": "42",
-                    "isResponsive": false,
+                    "isResponsive": true,
                     "editorName": "Unknown",
                     "sessionId": "80a1d466-bc2d-4478-b17c-167270ba30a7",
                     "isSEO": false,
@@ -11740,7 +11740,7 @@
                         "appsInstances": {
                         },
                         "expiryTimeoutOverride": 0,
-                        "isRunningInDifferentSiteContext": false
+                        "isRunningInDifferentSiteContext": true
                     },
                     "wixEmbedsApi": {
                         "isAdminPage": false
@@ -14714,7 +14714,7 @@
                         "comp-lax6lbl0": "Column",
                         "comp-lax6lbl01": "Column",
                         "BACKGROUND_GROUP": "BackgroundGroup",
-                        "WIX_ADS": "FreemiumBannerDesktop",
+                        "WIX_ADS": "null",
                         "SCROLL_TO_TOP": "Anchor",
                         "SCROLL_TO_BOTTOM": "Anchor",
                         "SKIP_TO_CONTENT_BTN": "SkipToContentButton",
