@@ -153,6 +153,10 @@ a:hover {
     overflow-x: hidden;
   }
 
+  section {
+    margin-bottom: 20vh;
+  }
+
   #full-name-section {
     text-align: center;
     align-self: center;
@@ -192,5 +196,29 @@ a:hover {
     row-gap: 0;
     justify-content: space-evenly;
     overflow: hidden;
+  }
+
+  #project-header {
+    font-size: 6vh;
+    letter-spacing: 0.01vw;
+    padding-left: 5vw;
+    margin-bottom: 0vh;
+  }
+
+  #project-list {
+    display: flex;
+    flex-direction: column;
+    font-size: 120%;
+    width: auto;
+    height: auto;
+    padding: 4vw;
+    padding-left: 6vw;
+    justify-content: space-evenly;
+  }
+
+  .project-item {
+    width: 100%;
+    font-size: smaller;
+    text-align: justify;
   }
 }
