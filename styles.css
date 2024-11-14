@@ -7,7 +7,7 @@ body {
   background-color: #0B0713;
   margin: 0px;
   padding: 0px;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -22,19 +22,24 @@ h1 {
   font-weight: lighter;
   line-height: 120%;
   color: #F5F5F5;
+  text-align: center;
+  vertical-align: middle;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2em;
+  line-height: 120%;
   color: #F5F5F5;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 100%;
+  letter-spacing: 0.01em;
   color: #F5F5F5;
 }
 
 p {
+  letter-spacing: 0.01em;
   color: #F5F5F5;
 }
 
@@ -65,7 +70,7 @@ main {
 }
 
 section {
-  margin-bottom: 2em;
+  margin-bottom: 30vh;
 }
 
 a {
@@ -116,14 +121,42 @@ a:hover {
   justify-content: space-evenly;
 }
 
+#project-header {
+  font-size: 10vh;
+  letter-spacing: 0.01vw;
+  padding-left: 5vw;
+  margin-bottom: 15vh;
+}
+
+#project-list {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  padding: 1vw;
+  column-gap: 1vw;
+  justify-content: space-evenly;
+}
+
+.project-item {
+  width: 25%;
+  text-align: justify;
+}
+
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (orientation: portrait) {
+  #body {
+    overflow-x: hidden;
+  }
+
   #full-name-section {
     text-align: center;
     align-self: center;
+    vertical-align: middle;
+    font-size: smaller;
     height: 50vh;
     width: 100%;
-    padding: 0px;
+    padding-top: 0px;
     margin: 0px;
     border: 0px;
   }
@@ -134,14 +167,26 @@ a:hover {
     padding: 0px;
     margin: 0px;
     border: 0px;
-    background-color: red;
+    overflow: hidden;
+    align-content: center;
+    background-color: #0B0713;
+  }
+
+  #robot-img {
+    width: auto;
+    height: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 
   #landing-page {
     display: flex;
     flex-direction: column;
+    width: 100vw;
     height: 100vh;
-    width: 100%;
     column-gap: 0;
+    row-gap: 0;
+    justify-content: space-evenly;
+    overflow: hidden;
   }
 }
