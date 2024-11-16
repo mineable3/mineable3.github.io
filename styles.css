@@ -102,6 +102,8 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ============== Landing page ============== */
+
 #full-name {
   text-align: center;
   align-self: center;
@@ -140,6 +142,8 @@ a:hover {
   justify-content: space-evenly;
 }
 
+/* ============== Technical showcase ============== */
+
 #project-header {
   font-size: 9vh;
   letter-spacing: 0.01vw;
@@ -166,29 +170,34 @@ a:hover {
   text-align: justify;
 }
 
+/* ============== About me ============== */
+
 #about-text {
-  text-align: center;
+  text-align: left;
   align-self: center;
   vertical-align: middle;
   height: 100vh;
   width: 60%;
   padding: 0px;
   padding-top: 20vh;
-  margin: 0px;
+  margin: 10%;
   border: 0px;
 }
 
 #about-header {
   font-family: Playfair;
-  font-weight: lighter;
-  letter-spacing: 0.05vw;
+  font-weight: bold;
+  font-size: 10vh;
+  letter-spacing: -0.1vw;
 }
 
 #portrait {
-  height: 100vh;
+  height: 80vh;
   width: 40%;
   padding: 0px;
-  margin: 0px;
+  margin: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   border: 0px;
   overflow: hidden;
   background-color: red;
@@ -197,6 +206,8 @@ a:hover {
 #portrait-img {
   width: auto;
   height: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 #about-section {
@@ -206,7 +217,9 @@ a:hover {
   height: 100vh;
   column-gap: 0;
   justify-content: space-evenly;
+  overflow-x: hidden;
 }
+
 /* Responsive Design */
 @media (orientation: portrait) {
   #body {
