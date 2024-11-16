@@ -241,7 +241,7 @@ a:hover {
     margin-bottom: 20vh;
   }
 
-  #full-name-section {
+  #full-name {
     text-align: center;
     align-self: center;
     vertical-align: middle;
@@ -293,16 +293,24 @@ a:hover {
     display: flex;
     flex-direction: column;
     font-size: 120%;
-    width: auto;
+    width: 94vw;
     height: auto;
     padding: 4vw;
     padding-left: 6vw;
+    padding-right: 0px;
+    margin-right: 0px;
     justify-content: space-evenly;
+    overflow-x: hidden;
   }
 
   .project-item {
-    width: 100%;
+    width: 80vw;
     font-size: smaller;
     text-align: justify;
+  }
+
+  #about-section {
+    background-color: red;
+    flex-direction: column;
   }
 }
