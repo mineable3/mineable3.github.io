@@ -202,8 +202,6 @@ a:hover {
 #portrait {
   height: auto;
   width: 45vw;
-  /* padding-top: 10vh;
-  padding-right: 10vw; */
   margin-top: 10vh;
   margin-right: 10vw;
   border: 0px;
@@ -309,8 +307,57 @@ a:hover {
     text-align: justify;
   }
 
+  #about-text {
+    text-align: left;
+    align-self: center;
+    vertical-align: middle;
+    line-height: 5vh;
+    height: 100vh;
+    width: 70%;
+    padding: 0px;
+    padding-top: 10vh;
+    padding-left: 5vw;
+    padding-right: 7vw;
+    margin: 10%;
+    border: 0px;
+  }
+  
+  #about-header {
+    font-family: Playfair;
+    font-weight: bold;
+    font-size: 12vh;
+    letter-spacing: -0.1vw;
+  }
+  
+  #about-content {
+    font-size: 3vh;
+  }
+  
+  #portrait {
+    height: auto;
+    width: 100vw;
+    margin-top: 10vh;
+    padding: 0px;
+    border: 0px;
+    overflow: hidden;
+    background-color: #0B0713;
+  }
+  
+  #portrait-img {
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  
   #about-section {
-    background-color: red;
+    display: flex;
     flex-direction: column;
+    width: 100vw;
+    height: auto;
+    column-gap: 0;
+    justify-content: space-evenly;
+    overflow-y: visible
   }
 }
