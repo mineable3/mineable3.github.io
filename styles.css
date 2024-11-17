@@ -107,21 +107,33 @@ a:hover {
 
 /* ============== Landing page ============== */
 
+#slash {
+  position: absolute;
+  margin-left: 43vw;
+  z-index: 999;
+}
+
+#slash-img {
+  height: 100vh;
+  width: 30vh;
+}
+
 #full-name {
   text-align: center;
   align-self: center;
   vertical-align: middle;
   height: 100vh;
-  width: 50%;
+  width: 40vw;
   padding: 0px;
-  padding-top: 20vh;
+  padding-top: 10vh;
   margin: 0px;
+  margin-left: 5vw;
   border: 0px;
 }
 
 #robot {
   height: 100vh;
-  width: 50%;
+  width: 60%;
   padding: 0px;
   margin: 0px;
   border: 0px;
@@ -278,11 +290,16 @@ a:hover {
 
   /* ============== Landing page ============== */
 
+  #slash {
+    display: none;
+  }
+
   #full-name {
     font-size: smaller;
     height: 50vh;
     width: 100%;
     padding-top: 0px;
+    margin: 0px;
   }
 
   #robot {
