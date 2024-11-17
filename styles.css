@@ -3,7 +3,6 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   letter-spacing: 0.1em;
-  color: #333;
   background-color: #0B0713;
   margin: 0px;
   padding: 0px;
@@ -82,26 +81,11 @@ p {
   color: #F5F5F5;
 }
 
-li {
-  color: #F5F5F5;
-}
-
 a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+  color: #F5F5F5;
+  font-weight: normal;
   font-size: 1.1em;
-}
-
-a:hover {
-  color: #ffbf00;
-}
-
-footer {
-  background-color: #032560;
-  color: #fff;
-  text-align: center;
-  padding: 2em 0;
+  text-decoration: none;
 }
 
 main {
@@ -110,11 +94,6 @@ main {
 
 section {
   margin-bottom: 40vh;
-}
-
-a {
-  text-decoration: none;
-  font-weight: normal;
 }
 
 a:hover {
@@ -126,9 +105,6 @@ a:hover {
   font-weight: bold;
 }
 
-.contact-link {
-  font-weight: normal;
-}
 /* ============== Landing page ============== */
 
 #full-name {
@@ -296,14 +272,6 @@ a:hover {
 
 /* Responsive Design */
 @media (orientation: portrait) {
-  #body {
-    max-width: 90vw;
-    position: relative;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-  }
-
   section {
     margin-bottom: 20vh;
   }
@@ -311,43 +279,21 @@ a:hover {
   /* ============== Landing page ============== */
 
   #full-name {
-    text-align: center;
-    align-self: center;
-    vertical-align: middle;
     font-size: smaller;
     height: 50vh;
     width: 100%;
     padding-top: 0px;
-    margin: 0px;
-    border: 0px;
   }
 
   #robot {
     height: 50vh;
     width: 100%;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    overflow: hidden;
     align-content: center;
-    background-color: #0B0713;
-  }
-
-  #robot-img {
-    width: auto;
-    height: 100%;
-    margin-left: 50%;
-    transform: translateX(-50%);
   }
 
   #landing-page {
-    display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    column-gap: 0;
     row-gap: 0;
-    justify-content: space-evenly;
     overflow: hidden;
   }
 
@@ -355,105 +301,61 @@ a:hover {
 
   #project-header {
     font-size: 6vh;
-    letter-spacing: 0.01vw;
     padding-left: 8vw;
     margin-bottom: 0vh;
   }
 
   #project-list {
-    display: flex;
     flex-direction: column;
     font-size: 160%;
     width: 80vw;
-    height: auto;
     padding: 4vw;
     padding-left: 8vw;
     padding-right: 0px;
     margin-right: 0px;
-    justify-content: space-evenly;
     overflow-x: hidden;
   }
 
   .project-item {
     width: 80vw;
-    /* font-size: smaller; */
-    text-align: justify;
-  }
-
-  #best-projects-section {
-    width: 100vw;
   }
 
   /* ============== About me ============== */
 
   #about-text {
-    text-align: left;
-    align-self: center;
-    vertical-align: middle;
     line-height: 4vh;
-    height: 100vh;
     width: 70%;
-    padding: 0px;
     padding-top: 10vh;
-    padding-left: 5vw;
-    padding-right: 7vw;
-    margin: 10%;
-    border: 0px;
   }
-  
-  #about-header {
-    font-family: Playfair;
-    font-weight: bold;
-    font-size: 12vh;
-    letter-spacing: -0.1vw;
-  }
-  
+
   #about-content {
     font-size: 2.7vh;
   }
-  
+
   #portrait {
-    height: auto;
     width: 100vw;
     margin-top: -10vh;
     padding: 0px;
-    border: 0px;
-    overflow: hidden;
-    background-color: #0B0713;
   }
-  
+
   #portrait-img {
-    position: relative;
     width: 80%;
-    height: auto;
-    margin-left: 50%;
-    transform: translateX(-50%);
   }
-  
+
   #about-section {
-    display: flex;
     flex-direction: column;
-    width: 100vw;
     height: auto;
-    column-gap: 0;
-    justify-content: space-evenly;
     overflow-y: visible;
   }
 
   /* ============== Contact me ============== */
 
   #contact-header {
-    font-family: Caudex;
-    align-self: center;
     font-size: 3.8em;
-    padding-top: 20vh;
     margin-bottom: 5vh;
   }
 
   #contact-links {
-    font-size: 100%;
-    letter-spacing: 0.01em;
-    align-self: center;
     font-size: 1.5em;
   }
 
@@ -461,13 +363,5 @@ a:hover {
     font-size: 0.7em;
     align-self: bottom;
     padding-top: 20vh;
-  }
-
-  #contact-section {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    margin-bottom: -40vh;
   }
 }
