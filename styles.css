@@ -390,7 +390,7 @@ a:hover {
     text-align: left;
     align-self: center;
     vertical-align: middle;
-    line-height: 5vh;
+    line-height: 4vh;
     height: 100vh;
     width: 70%;
     padding: 0px;
@@ -409,13 +409,13 @@ a:hover {
   }
   
   #about-content {
-    font-size: 3vh;
+    font-size: 2.7vh;
   }
   
   #portrait {
     height: auto;
     width: 100vw;
-    margin-top: 10vh;
+    margin-top: -10vh;
     padding: 0px;
     border: 0px;
     overflow: hidden;
@@ -445,7 +445,7 @@ a:hover {
   #contact-header {
     font-family: Caudex;
     align-self: center;
-    font-size: 4.2em;
+    font-size: 3.8em;
     padding-top: 20vh;
     margin-bottom: 5vh;
   }
@@ -454,11 +454,11 @@ a:hover {
     font-size: 100%;
     letter-spacing: 0.01em;
     align-self: center;
-    font-size: 1.6em;
+    font-size: 1.5em;
   }
 
   #copyright {
-    font-size: 0.8em;
+    font-size: 0.7em;
     align-self: bottom;
     padding-top: 20vh;
   }
