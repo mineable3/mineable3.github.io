@@ -54,7 +54,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   font-size: 700%;
   letter-spacing: 150%;
   font-weight: lighter;
@@ -104,6 +104,18 @@ a:hover {
 
 .link {
   font-weight: bold;
+}
+
+/* ============== Home button ============== */
+#home-button {
+  position: absolute;
+  font-size: 1.0em;
+  padding: 10px;
+  letter-spacing: 0.05em;
+  right: 0px; /* This is the line that makes the button right aligned */
+  top: 0px; /* This is the line that makes the button top aligned */
+  border: 4px double white;
+  margin: 10px;
 }
 
 /* ============== Landing page ============== */
@@ -253,38 +265,9 @@ a:hover {
   margin-bottom: 20vh;
 }
 
-/* ============== Contact me ============== */
-
-#contact-header {
-  font-family: Caudex;
-  align-self: center;
-  font-size: 4.8em;
-  padding-top: 20vh;
-  margin-bottom: 0vh;
-}
-
-#contact-links {
-  font-size: 100%;
-  letter-spacing: 0.01em;
-  align-self: center;
-  font-size: 1.6em;
-}
-
-#copyright {
-  font-size: 0.8em;
-  align-self: center;
-  padding-top: 5vh;
-}
-
-#contact-section {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  margin-bottom: -40vh;
-}
-
-/* Responsive Design for mobile viewing */
+/* ===================================== */
+/* Responsive Design for mobile viewing  */
+/* ===================================== */
 @media (orientation: portrait) {
   section {
     margin-bottom: 20vh;
