@@ -1,0 +1,22 @@
+/* ============== Blogs ============== */
+#blog-header-wrapper {
+  width: 60vw;
+  height: 30vh;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-top: 10vh;
+}
+
+#blog-header {
+  font-size: 3.0em;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+
+#blog-date {
+  position: absolute;
+  right: 18vw;
+  padding-top: 0px;
+  margin-top: -15vh;
+}
+
