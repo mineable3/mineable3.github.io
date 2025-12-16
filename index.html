@@ -12,77 +12,24 @@
 
     <body>
         <main>
-            <div id="website">
-                <!-- This is the slash on the landing page. It is seperate from the landing-section so its location is independent of the other elements -->
-                <div id="slash">
-                    <img id="slash-img" src="slash.png" alt="">
+            <div id="website1">
+            <div id="website2">
+                <div id="personal-container">
+                    <div id="img-container">
+                        <img id="portrait-img" src="person.jpeg" alt="A picture of Emmet Spaeth who is devastatingly handsome.">
+                    </div>
+                    <h3 class="personal-info">Emmet Spaeth</h3>
+                    <p class="personal-info">UConn, undergraduate</p>
+                    <p class="personal-info">Hartford, CT</p>
                 </div>
-                <section id="landing-section">
-                    <div id="landing-page">
-                        <div id="full-name">
-                            <h1>EMMET<br>SPAETH</h1>
-                        </div>
-                        <div id="robot">
-                            <img id="robot-img" src="Robot.jpg" alt="A picture of FRC team 1991's robot moving through the 2024 playing field.">
-                        </div>
-                    </div>
-                </section>
-                <!-- Technical show case section -->
-                <section id="best-projects-section">
-                    <h2 id="project-header"><u>Technical Showcase</u></h2>
-                    <div id="project-list">
-                        <div id="project-1" class="project-item">
-                            <h3>
-                                <a href="https://github.com/FRC1991/Robot-2025" target="_blank" rel="noreferrer noopener" class="link">1 / FRC Team 1991's 2025 robot</a>
-                            </h3>
-                            <p> A code base created to control an FRC robot. The robot is controlled by two state machines, one for translational movement and another for auxiliary control of scoring. It also implements the singleton design pattern for safety.</p>
-                        </div>
-                        <div id="project-2" class="project-item">
-                            <h3>
-                                <a href="https://github.com/mineable3/TexasHoldem-AI" target="_blank" rel="noreferrer noopener" class="link">2 / Neural Networks</a>
-                            </h3>
-                            <p>Available to view on Github is a neural network built from scratch, without the use of python libraries. While somewhat inefficient, it proved itself capable in a case study of it playing a version of Texas Hold'em against itself.</p>
-                        </div>
-                        <div id="project-3" class="project-item">
-                            <h3>
-                                <a href="https://github.com/mineable3/Checkers" target="_blank" rel="noreferrer noopener" class="link">3 / Checkers</a>
-                            </h3>
-                            <p>A very simple, but in my opinion charming game a checkers. Implemented with a CLI, it is a two player checkers game and plays the variation without double jumps.</p>
-                        </div>
-                    </div>
-                </section>
-                <!-- About me section -->
-                <section id="about-section">
-                    <div id="about-text">
-                        <h2 id="about-header">About</h2>
-                        <p id="about-content">I'm a student at the University of Connecticut majoring in Computer Science and Engineering. My interests outside of academia include cooking, exercising, and drawing. One day I hope to pursue a career as a researcher, making the world a better place.</p>
-                    </div>
-                    <div id="portrait">
-                        <img id="portrait-img" src="person.jpeg" alt="A picture of FRC team 1991's robot moving through the 2024 playing field.">
-                    </div>
-                </section>
-                <!-- Contact me section -->
-                <section id="contact-section">
-                    <h2 id="contact-header">Contact me</h2>
-                    <p id="contact-links">
-                        <a href="http://github.com/mineable3" target="_blank" rel="noreferrer noopener" class="contact-link">Github</a>
-                        <!-- &nbsp; is the code for a Non-Breaking Space-->
-                        &nbsp;|&nbsp;
-                        <a href="https://www.linkedin.com/in/emmet-spaeth-136165309/" target="_blank" rel="noreferrer noopener" class="contact-link">LinkedIn</a>
-                        &nbsp;|&nbsp;
-                        <a href="mailto:emmet.spaeth@gmail.com" target="_blank" rel="noreferrer noopener" class="contact-link">Gmail</a>
-                    </p>
-                    <p id="copyright">&copy;2025 by Emmet Spaeth. All rights reserved.</p>
-                </section>
+                <div id="pages-container">
+                    <a href="projects.html" rel="noreferrer noopener" class="pages-links">Projects</a>
+                    <a href="resume.html" target="_blank" rel="noreferrer noopener" class="pages-links">Resume</a>
+                    <a href="blogs.html" rel="noreferrer noopener" class="pages-links">Blog</a>
+                    <a href="contact.html" rel="noreferrer noopener" class="pages-links">Links</a>
+                </div>
+            </div>
             </div>
         </main>
-
-    <!-- idk wft this is, but ChatGPT included it in another project so I will too -->
-    <script>
-        // Minimal JavaScript example, if needed for essential interactions.
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("Page loaded and ready.");
-        });
-    </script>
     </body>
 </html>

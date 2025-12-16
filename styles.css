@@ -1,369 +1,285 @@
 /* ============== Fonts ============== */
 /* Curtesy of Google Fonts */
 @font-face {
-  font-family: 'Impact';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=HhyVU5gq9PCuP11_LNCH&skey=5128cd07406988e&v=v19) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: 'Impact';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/l/font?kit=HhyVU5gq9PCuP11_LNCH&skey=5128cd07406988e&v=v19) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'Playfair';
-  font-style: normal;
-  font-weight: 300 900;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/playfair/v2/0nk2C9D7PO4KhmUJ5_zTZ-wCMUXynAK-5UQzUIta.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: 'Playfair';
+    font-style: normal;
+    font-weight: 300 900;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/playfair/v2/0nk2C9D7PO4KhmUJ5_zTZ-wCMUXynAK-5UQzUIta.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'Caudex';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/caudex/v17/esDT311QOP6BJUrwdteUkp8D.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: 'Caudex';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/caudex/v17/esDT311QOP6BJUrwdteUkp8D.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'Kanit';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraVGwA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraVGwA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  letter-spacing: 0.1em;
-  background-color: #0B0713;
-  margin: 0px;
-  padding: 0px;
-  overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    background-color: #0B0713;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
 }
 
 
 h1, h2, h3 {
-  font-family: 'Lato', sans-serif;
-  margin-bottom: 0.5em;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0.5em;
 }
 
 h1 {
-  font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-  font-size: 700%;
-  letter-spacing: 150%;
-  font-weight: lighter;
-  line-height: 120%;
-  color: #F5F5F5;
-  text-align: center;
-  vertical-align: middle;
+    font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    font-size: 700%;
+    letter-spacing: 150%;
+    font-weight: lighter;
+    line-height: 120%;
+    color: #F5F5F5;
+    text-align: center;
+    vertical-align: middle;
 }
 
 h2 {
-  font-size: 2em;
-  line-height: 120%;
-  color: #F5F5F5;
+    font-size: 2em;
+    line-height: 120%;
+    color: #F5F5F5;
 }
 
 h3 {
-  font-size: 120%;
-  text-align: left;
-  letter-spacing: 0.01em;
-  color: #F5F5F5;
+    font-size: 120%;
+    text-align: left;
+    letter-spacing: 0.01em;
+    color: #F5F5F5;
 }
 
 p {
-  letter-spacing: 0.06em;
-  color: #F5F5F5;
+    letter-spacing: 0.06em;
+    color: #F5F5F5;
 }
 
 a {
-  color: #F5F5F5;
-  font-weight: normal;
-  font-size: 1.1em;
-  text-decoration: none;
+    color: #F5F5F5;
+    font-weight: normal;
+    font-size: 1.1em;
+    text-decoration: none;
 }
 
 main {
-  background-color: #0B0713;
+    background-color: #0B0713;
 }
 
 section {
-  margin-bottom: 40vh;
+    margin-bottom: 40vh;
 }
 
 a:hover {
-  color: #b8b8b8;
-  text-decoration: underline;
+    color: #b8b8b8;
+    text-decoration: underline;
 }
 
 .link {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 /* ============== Home button ============== */
 #home-button {
-  position: absolute;
-  font-size: 1.0em;
-  padding: 10px;
-  letter-spacing: 0.05em;
-  right: 0px; /* This is the line that makes the button right aligned */
-  top: 0px; /* This is the line that makes the button top aligned */
-  border: 4px double white;
-  margin: 10px;
+    position: absolute;
+    font-size: 1.0em;
+    padding: 10px;
+    letter-spacing: 0.05em;
+    right: 0px; /* This is the line that makes the button right aligned */
+    top: 0px; /* This is the line that makes the button top aligned */
+    border: 4px double white;
+    margin: 10px;
 }
 
 /* ============== Landing page ============== */
 
-#slash {
-  position: absolute;
-  margin-left: 43vw;
-  z-index: 999;
+#website1 {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
-#slash-img {
-  height: 100vh;
-  width: 30vh;
+#website2 {
+    width: 100%;
+    height: 99%;
+    overflow: auto;
+    padding-right: 15px;
+    display: flex;
 }
 
-#full-name {
-  text-align: center;
-  align-self: center;
-  vertical-align: middle;
-  height: 100vh;
-  width: 40vw;
-  padding: 0px;
-  padding-top: 10vh;
-  margin: 0px;
-  margin-left: 5vw;
-  border: 0px;
+#personal-container {
+    display: grid;
+    width: 50vw;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 7%;
+    row-gap: 2%;
 }
 
-#robot {
-  height: 100vh;
-  width: 60%;
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
-  overflow: hidden;
-  background-color: #0B0713;
-}
-
-#robot-img {
-  width: auto;
-  height: 100%;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-
-#landing-page {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
-  column-gap: 0;
-  justify-content: space-evenly;
-}
-
-/* ============== Technical showcase ============== */
-
-#project-header {
-  font-size: 9vh;
-  font-family: Kanit;
-  letter-spacing: 0.01vw;
-  padding-top: 10vh;
-  padding-left: 5vw;
-  margin-bottom: 10vh;
-}
-
-#project-list {
-  display: flex;
-  flex-direction: row;
-  font-size: 120%;
-  width: 95vw;
-  height: auto;
-  padding: 1vw;
-  padding-right: 2vw;
-  margin-right: 5vw;
-  column-gap: 1vw;
-  justify-content: space-evenly;
-}
-
-.project-item {
-  width: 25%;
-  font-size: smaller;
-  text-align: justify;
-}
-
-#best-projects-section {
-  width: 100vw;
-  margin-bottom: 20vh;
-}
-
-/* ============== About me ============== */
-
-#about-text {
-  text-align: left;
-  align-self: center;
-  vertical-align: middle;
-  line-height: 5vh;
-  height: 100vh;
-  width: 60%;
-  padding: 0px;
-  padding-top: 20vh;
-  padding-left: 5vw;
-  padding-right: 7vw;
-  margin: 10%;
-  border: 0px;
-}
-
-#about-header {
-  font-family: Playfair;
-  font-weight: bold;
-  font-size: 12vh;
-  letter-spacing: -0.1vw;
-}
-
-#about-content {
-  font-size: 3vh;
-  letter-spacing: 0vw;
-}
-
-#portrait {
-  height: auto;
-  width: 45vw;
-  margin-top: 10vh;
-  margin-right: 10vw;
-  border: 0px;
-  overflow: hidden;
-  background-color: #0B0713;
+#img-container {
+    align-self: center;
 }
 
 #portrait-img {
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin-left: 50%;
-  margin-top: 12.5%;
-  margin-bottom: 12.5%;
-  transform: translateX(-50%);
+    width: 50%;
+    height: auto;
+    margin: 0px;
+    padding-left: 25%;
+    padding-right: 25%;
 }
 
-#about-section {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
-  column-gap: 0;
-  justify-content: space-evenly;
-  overflow: hidden;
-  margin-bottom: 20vh;
+.personal-info {
+    margin-top: -10px;
+    padding: 0px;
+    align-self: center;
+    text-align: center;
+}
+
+#pages-container {
+    display: grid;
+    width: 50vw;
+    padding-right: 10%;
+    padding-left: 9%;
+    padding-top: 5%;
+    padding-bottom: 7%;
+    row-gap: 7%;
+}
+
+.pages-links {
+    font-family: Impact;
+    font-size: 3.0em;
+    border: 6px double white;
+    text-align: middle;
+    padding-left: 3%;
 }
 
 /* ===================================== */
-/* Responsive Design for mobile viewing  */
+/* Responsive Design for mobile viewing    */
 /* ===================================== */
 @media (orientation: portrait) {
-  section {
-    margin-bottom: 20vh;
-  }
+    section {
+        margin-bottom: 20vh;
+    }
 
-  /* ============== Landing page ============== */
+    /* ============== Landing page ============== */
 
-  #slash {
-    display: none;
-  }
+    #slash {
+        display: none;
+    }
 
-  #full-name {
-    font-size: smaller;
-    height: 50vh;
-    width: 100%;
-    padding-top: 0px;
-    margin: 0px;
-  }
+    #full-name {
+        font-size: smaller;
+        height: 50vh;
+        width: 100%;
+        padding-top: 0px;
+        margin: 0px;
+    }
 
-  #robot {
-    height: 50vh;
-    width: 100%;
-    align-content: center;
-  }
+    #robot {
+        height: 50vh;
+        width: 100%;
+        align-content: center;
+    }
 
-  #landing-page {
-    flex-direction: column;
-    row-gap: 0;
-    overflow: hidden;
-  }
+    #landing-page {
+        flex-direction: column;
+        row-gap: 0;
+        overflow: hidden;
+    }
 
-  /* ============== Technical showcase ============== */
+    /* ============== Technical showcase ============== */
 
-  #project-header {
-    font-size: 6vh;
-    padding-left: 8vw;
-    margin-bottom: 0vh;
-  }
+    #project-header {
+        font-size: 6vh;
+        padding-left: 8vw;
+        margin-bottom: 0vh;
+    }
 
-  #project-list {
-    flex-direction: column;
-    font-size: 160%;
-    width: 80vw;
-    padding: 4vw;
-    padding-left: 8vw;
-    padding-right: 0px;
-    margin-right: 0px;
-    overflow-x: hidden;
-  }
+    #project-list {
+        flex-direction: column;
+        font-size: 160%;
+        width: 80vw;
+        padding: 4vw;
+        padding-left: 8vw;
+        padding-right: 0px;
+        margin-right: 0px;
+        overflow-x: hidden;
+    }
 
-  .project-item {
-    width: 80vw;
-  }
+    .project-item {
+        width: 80vw;
+    }
 
-  /* ============== About me ============== */
+    /* ============== About me ============== */
 
-  #about-text {
-    line-height: 4vh;
-    width: 70%;
-    padding-top: 10vh;
-  }
+    #about-text {
+        line-height: 4vh;
+        width: 70%;
+        padding-top: 10vh;
+    }
 
-  #about-content {
-    font-size: 2.7vh;
-  }
+    #about-content {
+        font-size: 2.7vh;
+    }
 
-  #portrait {
-    width: 100vw;
-    margin-top: -10vh;
-    padding: 0px;
-  }
+    #portrait {
+        width: 100vw;
+        margin-top: -10vh;
+        padding: 0px;
+    }
 
-  #portrait-img {
-    width: 80%;
-  }
+    #portrait-img {
+        width: 80%;
+    }
 
-  #about-section {
-    flex-direction: column;
-    height: auto;
-    overflow-y: visible;
-  }
+    #about-section {
+        flex-direction: column;
+        height: auto;
+        overflow-y: visible;
+    }
 
-  /* ============== Contact me ============== */
+    /* ============== Contact me ============== */
 
-  #contact-header {
-    font-size: 3.8em;
-    margin-bottom: 5vh;
-  }
+    #contact-header {
+        font-size: 3.8em;
+        margin-bottom: 5vh;
+    }
 
-  #contact-links {
-    font-size: 1.5em;
-  }
+    #contact-links {
+        font-size: 1.5em;
+    }
 
-  #copyright {
-    font-size: 0.7em;
-    align-self: bottom;
-    padding-top: 20vh;
-  }
+    #copyright {
+        font-size: 0.7em;
+        align-self: bottom;
+        padding-top: 20vh;
+    }
 }
