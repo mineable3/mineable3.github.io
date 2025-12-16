@@ -20,3 +20,12 @@
   margin-top: -15vh;
 }
 
+#blog-list-wrapper {
+  position: absolute;
+  padding-left: 20vw;
+}
+
+.blog-link {
+  letter-spacing: 0.01em;
+}
+
