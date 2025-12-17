@@ -1,0 +1,35 @@
+/* ============== Technical showcase ============== */
+
+#project-header {
+  font-size: 9vh;
+  font-family: Kanit;
+  letter-spacing: 0.01vw;
+  padding-top: 5vh;
+  padding-left: 5vw;
+  margin-bottom: 10vh;
+}
+
+#project-list {
+  display: flex;
+  flex-direction: row;
+  font-size: 120%;
+  width: 95vw;
+  height: auto;
+  padding: 1vw;
+  padding-right: 2vw;
+  margin-right: 5vw;
+  column-gap: 1vw;
+  justify-content: space-evenly;
+}
+
+.project-item {
+  width: 25%;
+  font-size: smaller;
+  text-align: justify;
+}
+
+#best-projects-section {
+  width: 100vw;
+  margin-bottom: 20vh;
+}
+
