@@ -51,3 +51,14 @@
     overflow: hidden;
 }
 
+/* ===================================== */
+/* Responsive Design for mobile viewing    */
+/* ===================================== */
+@media (orientation: portrait) {
+    #flower3-img {
+        width: auto;
+        height: 140%;
+        right: -30%;
+        top: -55%;
+    }
+}

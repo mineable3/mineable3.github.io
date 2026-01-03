@@ -192,6 +192,10 @@ a:hover {
     letter-spacing: 0.03rem;
 }
 
+#smaller-title {
+    display: none;
+}
+
 #pages-container {
     list-style: none;
     display: flex;
@@ -231,101 +235,12 @@ a:hover {
 /* Responsive Design for mobile viewing    */
 /* ===================================== */
 @media (orientation: portrait) {
-    section {
-        margin-bottom: 20vh;
-    }
-
-    /* ============== Landing page ============== */
-
-    #slash {
+    #title {
         display: none;
     }
 
-    #full-name {
-        font-size: smaller;
-        height: 50vh;
-        width: 100%;
-        padding-top: 0px;
-        margin: 0px;
-    }
-
-    #robot {
-        height: 50vh;
-        width: 100%;
-        align-content: center;
-    }
-
-    #landing-page {
-        flex-direction: column;
-        row-gap: 0;
-        overflow: hidden;
-    }
-
-    /* ============== Technical showcase ============== */
-
-    #project-header {
-        font-size: 6vh;
-        padding-left: 8vw;
-        margin-bottom: 0vh;
-    }
-
-    #project-list {
-        flex-direction: column;
-        font-size: 160%;
-        width: 80vw;
-        padding: 4vw;
-        padding-left: 8vw;
-        padding-right: 0px;
-        margin-right: 0px;
-        overflow-x: hidden;
-    }
-
-    .project-item {
-        width: 80vw;
-    }
-
-    /* ============== About me ============== */
-
-    #about-text {
-        line-height: 4vh;
-        width: 70%;
-        padding-top: 10vh;
-    }
-
-    #about-content {
-        font-size: 2.7vh;
-    }
-
-    #portrait {
-        width: 100vw;
-        margin-top: -10vh;
-        padding: 0px;
-    }
-
-    #portrait-img {
-        width: 80%;
-    }
-
-    #about-section {
-        flex-direction: column;
-        height: auto;
-        overflow-y: visible;
-    }
-
-    /* ============== Contact me ============== */
-
-    #contact-header {
-        font-size: 3.8em;
-        margin-bottom: 5vh;
-    }
-
-    #contact-links {
-        font-size: 1.5em;
-    }
-
-    #copyright {
-        font-size: 0.7em;
-        align-self: bottom;
-        padding-top: 20vh;
+    #smaller-title {
+        display: flex;
     }
 }
+
