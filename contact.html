@@ -11,35 +11,52 @@
         <link rel="stylesheet" href="contact.css">
     </head>
 
-    <body>
-        <main>
-            <div id="website">
-                <!-- Home button -->
-                <div id="home-button">
-                    <a href="index.html" rel="noreferrer noopener" class="home-link">HOME</a>
-                </div>
-                <!-- Contact me section -->
-                <section id="contact-section">
-                    <h1 id="contact-header">Contact me</h2>
-                    <p id="contact-links">
-                        <a href="http://github.com/mineable3" target="_blank" rel="noreferrer noopener" class="contact-link">Github</a>
-                        <!-- &nbsp; is the code for a Non-Breaking Space-->
-                        &nbsp;|&nbsp;
-                        <a href="https://www.linkedin.com/in/emmet-spaeth-136165309/" target="_blank" rel="noreferrer noopener" class="contact-link">LinkedIn</a>
-                        &nbsp;|&nbsp;
-                        <a href="mailto:emmet.spaeth@gmail.com" target="_blank" rel="noreferrer noopener" class="contact-link">Gmail</a>
-                    </p>
-                    <p id="copyright">&copy;2025 by Emmet Spaeth. All rights reserved.</p>
-                </section>
-            </div>
-        </main>
+    <div class="flower-container">
+        <img id="flower2-img" src="/home/mineable3/Downloads/flower2 (Copy).png">
+    </div>
 
-    <!-- idk wft this is, but ChatGPT included it in another project so I will too -->
-    <script>
-        // Minimal JavaScript example, if needed for essential interactions.
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("Page loaded and ready.");
-        });
-    </script>
+    <body>
+        <div id="border">
+            <header class="site-header">
+                <nav class="navbar">
+                    <div id="title">Emmet Spaeth</div>
+                    <ul id="pages-container">
+                        <li><a href="index.html" rel="noreferrer noopener" class="button">Home</a></li>
+                        <li><a href="Resume1.pdf" target="_blank" rel="noreferrer noopener" class="button">Résumé</a></li>
+                        <li><a href="blogs.html" rel="noreferrer noopener" class="button">Blog</a></li>
+                        <li><a href="contact.html" rel="noreferrer noopener" class="button">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Contact me section -->
+            <div id="content">
+                <div id="contact-header">Contacts</div>
+                <ul id="contact-links">
+                    <!-- &nbsp; is the code for a Non-Breaking Space-->
+                    <!-- &nbsp;|&nbsp; -->
+                    <li>
+                        <strong>Github:</strong>
+                        <a href="http://github.com/mineable3" target="_blank" rel="noreferrer noopener" class="contact-link">https://github.com/mineable3</a>
+                    </li>
+                    <li>
+                        <strong>LinkedIn:</strong>
+                        <a href="https://www.linkedin.com/in/emmet-spaeth-136165309/" target="_blank" rel="noreferrer noopener" class="contact-link">https://www.linkedin.com/in/emmet-spaeth-136165309/</a>
+                    </li>
+                    <li>
+                        <strong>Email (personal):</strong>
+                        <a href="mailto:emmet.spaeth@gmail.com" target="_blank" rel="noreferrer noopener" class="contact-link">emmet.spaeth@gmail.com</a>
+                    </li>
+                    <li>
+                        <strong>Email (school):</strong>
+                        <a href="mailto:emmet.spaeth@uconn.com" target="_blank" rel="noreferrer noopener" class="contact-link">emmet.spaeth@uconn.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2026 Emmet Spaeth</p>
+            </footer>
+        </div>
     </body>
 </html>

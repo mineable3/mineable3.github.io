@@ -12,30 +12,31 @@
     </head>
 
     <body>
-        <main>
-            <div id="website">
-                <!-- Home button -->
-                <div id="home-button">
-                    <a href="../index.html" rel="noreferrer noopener" class="home-link">HOME</a>
-                </div>
-                <!-- Blog button, on the top left of the screen and returns the user to
-                    the list of blogs -->
-                <div id="blog-button">
-                    <a href="../blogs.html" rel="noreferrer noopener" class="home-link">BLOGS</a>
-                </div>
-                <section id="blog-section">
-                    <div id="blog-header-wrapper">
-                        <h1 id="blog-header">Introduction to State Machines in FRC programming</h1>
-                    </div>
+        <div id="border">
+            <header class="site-header">
+                <nav class="navbar">
+                    <div id="title">Emmet Spaeth</div>
+                    <ul id="pages-container">
+                        <li><a href="../index.html" rel="noreferrer noopener" class="button">Home</a></li>
+                        <li><a href="../Resume1.pdf" target="_blank" rel="noreferrer noopener" class="button">Résumé</a></li>
+                        <li><a href="../blogs.html" rel="noreferrer noopener" class="button">Blog</a></li>
+                        <li><a href="../contact.html" rel="noreferrer noopener" class="button">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-                    <p id="blog-date">Dec 15, 2025</p>
+            <div id="blogs-content">
+                <div id="blog-header">Introduction to State Machines in FRC programming</div>
 
-                    <div id="blog-video-wrapper">
-                        <iframe id="blog-video" src="https://www.youtube.com/embed/Vr-79QyLZvI?si=5ZBhU-EM7fs4Zzw8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <!--<iframe id="blog-video" src="1.pdf" frameborder="0"><\iframe>-->
-                    </div>
-                </section>
+                <div id="blog-date">Dec 15, 2025</div>
+
+                <iframe id="blog-source" src="https://www.youtube.com/embed/Vr-79QyLZvI?si=5ZBhU-EM7fs4Zzw8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!--<iframe id="blog-video" src="1.pdf" frameborder="0"><\iframe>-->
             </div>
-        </main>
+
+            <footer class="footer">
+                <p>&copy; 2026 Emmet Spaeth</p>
+            </footer>
+        </div>
     </body>
 </html>

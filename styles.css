@@ -37,13 +37,24 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* ===========================
+   RESET + BASE
+   =========================== */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: #151515;
+}
+
 body {
+    background: #e6dab8;
+    padding: 3rem 1rem;
+    /*color: #222;*/
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     letter-spacing: 0.1em;
-    background-color: #0B0713;
-    margin: 0px;
-    padding: 0px;
     overflow-x: hidden;
 }
 
@@ -59,7 +70,6 @@ h1 {
     letter-spacing: 150%;
     font-weight: lighter;
     line-height: 120%;
-    color: #F5F5F5;
     text-align: center;
     vertical-align: middle;
 }
@@ -67,76 +77,80 @@ h1 {
 h2 {
     font-size: 2em;
     line-height: 120%;
-    color: #F5F5F5;
 }
 
 h3 {
     font-size: 120%;
     text-align: left;
     letter-spacing: 0.01em;
-    color: #F5F5F5;
 }
 
 p {
     letter-spacing: 0.06em;
-    color: #F5F5F5;
+    padding: 3%;
+    padding-right: 5%;
+    padding-left: 0;
 }
 
 a {
-    color: #F5F5F5;
+    /*text-shadow: black 0 0 5px;*/
+    color: #2e69ff;
     font-weight: normal;
     font-size: 1.1em;
-    text-decoration: none;
-}
-
-main {
-    background-color: #0B0713;
-}
-
-section {
-    margin-bottom: 40vh;
 }
 
 a:hover {
-    color: #b8b8b8;
-    text-decoration: underline;
-}
-
-.link {
-    font-weight: bold;
-}
-
-/* ============== Home button ============== */
-#home-button {
-    position: absolute;
-    font-size: 1.0em;
-    padding: 10px;
-    letter-spacing: 0.05em;
-    right: 0px; /* This is the line that makes the button right aligned */
-    top: 0px; /* This is the line that makes the button top aligned */
-    border: 4px double white;
-    margin: 10px;
+    color: #4eaa99;
+    color: #99b6ff;
 }
 
 /* ============== Landing page ============== */
 
-#website1 {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+#border {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #f5f5f5dd;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
 }
 
-#website2 {
-    width: 100%;
-    height: 99%;
-    overflow: auto;
-    padding-right: 15px;
+#home-content {
     display: flex;
+}
+
+/* ===========================
+   HEADER / NAV
+   =========================== */
+.site-header {
+    /*border-bottom: 1px solid #ddd;*/
+    /*background: #0000ff11;*/
+    border-bottom: 4px dotted #0000ff33;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #151515;
+}
+
+.navbar a:hover {
+    color: #686868;
+    text-decoration: underline;
+}
+
+#paragraph {
+    width: 60%;
 }
 
 #personal-container {
     display: grid;
-    width: 50vw;
+    width: 40%;
     padding-right: 5%;
     padding-left: 5%;
     padding-top: 5%;
@@ -146,39 +160,71 @@ a:hover {
 
 #img-container {
     align-self: center;
+    padding-bottom: 10%;
 }
 
 #portrait-img {
-    width: 50%;
+    width: 100%;
     height: auto;
     margin: 0px;
-    padding-left: 25%;
-    padding-right: 25%;
+    margin-left: 0%;
+    margin-right: 0%;
+    /* Horizontal offset | Vertical offset | Blur radius | Spread radius | Color */
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.3);
+}
+
+#name {
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 .personal-info {
     margin-top: -10px;
+    margin-bottom: 0px;
     padding: 0px;
     align-self: center;
     text-align: center;
 }
 
-#pages-container {
-    display: grid;
-    width: 50vw;
-    padding-right: 10%;
-    padding-left: 9%;
-    padding-top: 5%;
-    padding-bottom: 7%;
-    row-gap: 7%;
+#title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
 }
 
-.pages-links {
-    font-family: Impact;
-    font-size: 3.0em;
-    border: 6px double white;
-    text-align: middle;
-    padding-left: 3%;
+#pages-container {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.flower-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    margin: 0px;
+}
+
+#flower1-img {
+    position: absolute;
+    width: auto;
+    height: 140%;
+    right: -2%;
+    bottom: -30%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+  text-align: center;
+  padding: 1.0rem;
+  font-size: 0.9rem;
+  color: #777;
+  /*border-top: 1px solid #eee;*/
 }
 
 /* ===================================== */

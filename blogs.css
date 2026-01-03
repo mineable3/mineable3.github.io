@@ -1,41 +1,53 @@
 /* ============== Blogs ============== */
-#blog-header-wrapper {
-    width: 60vw;
-    height: 30vh;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    margin-top: 10vh;
+
+#blogs-content {
+    padding: 5%;
+    padding-top: 1%;
 }
 
 #blog-header {
-    font-size: 3.0em;
     letter-spacing: 0.02em;
-    vertical-align: middle;
+    width: 50%;
+    font-family: Caudex;
+    font-size: 2.8em;
+    padding-top: 1%;
+    margin-bottom: 2%;
+    border-bottom: 3px solid #007bff;
+    align-self: bottom;
 }
 
 #blog-date {
-    position: absolute;
-    right: 18vw;
+    width: 100%;
+    letter-spacing: 0.02em;
+    text-align: left;
     padding-top: 0px;
-    margin-top: -15vh;
-}
-
-#blog-list-wrapper {
-    position: absolute;
-    padding-left: 20vw;
-}
-
-ul {
-    color: white;
+    padding-bottom: 7%;
 }
 
 #blog-list {
-    list-style-type: circle;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 0.9rem;
+    font-size: 100%;
+    letter-spacing: 0.01em;
+    align-self: left;
+    font-size: 1.2em;
 }
 
 
 .blog-link {
-    font-size: 1.3em;
+    font-size: 1.0em;
     letter-spacing: 0.01em;
+}
+
+#flower3-img {
+    position: absolute;
+    width: 60%;
+    height: auto;
+    right: -16%;
+    top: -63%;
+    z-index: -1;
+    overflow: hidden;
 }
 

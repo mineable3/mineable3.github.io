@@ -1,29 +1,40 @@
 /* ============== Contact me ============== */
+#content {
+    display: flex;
+    flex-direction: column;
+    padding: 6%;
+    padding-bottom: 20%;
+    padding-top: 1%;
+}
+
 #contact-header {
-  font-family: Caudex;
-  align-self: center;
-  font-size: 4.8em;
-  padding-top: 20vh;
-  margin-bottom: 0vh;
+    width: 30%;
+    font-family: Caudex;
+    align-self: left;
+    font-size: 2.8em;
+    padding-top: 1%;
+    margin-bottom: 4%;
+    border-bottom: 3px solid #007bff;
 }
 
 #contact-links {
-  font-size: 100%;
-  letter-spacing: 0.01em;
-  align-self: center;
-  font-size: 1.6em;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 1rem;
+    font-size: 100%;
+    letter-spacing: 0.01em;
+    align-self: left;
+    font-size: 1.2em;
+    overflow: hidden;
 }
 
-#copyright {
-  font-size: 0.8em;
-  align-self: center;
-  padding-top: 5vh;
+#flower2-img {
+    position: absolute;
+    width: auto;
+    height: 140%;
+    left: -15%;
+    top: -23%;
+    z-index: -1;
 }
 
-#contact-section {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  margin-bottom: -40vh;
-}
