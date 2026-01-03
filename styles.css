@@ -41,11 +41,11 @@
    RESET + BASE
    =========================== */
 * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  color: #151515;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #151515;
 }
 
 body {
