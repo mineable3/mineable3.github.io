@@ -31,3 +31,14 @@
     padding: 0px;
 }
 
+#blog-pdf {
+    width: 100%;
+    height: 160vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+#outside-pdf {
+    letter-spacing: 0.02em;
+    margin-bottom: 2%;
+}
