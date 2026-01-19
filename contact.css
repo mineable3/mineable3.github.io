@@ -33,7 +33,7 @@
     position: absolute;
     width: auto;
     height: 140%;
-    left: -15%;
+    right: -15%;
     top: -23%;
     z-index: -1;
 }
