@@ -51,7 +51,9 @@
 body {
     /* Circle pattern */
     --s: 140px;
-    --c1: #f6eac8;
+    /*--c1: #f6eac8;*/
+    /*--c2: #ecdfbd;*/
+    --c1: #f0e4c2;
     --c2: #ecdfbd;
 
     --_g: 
@@ -121,7 +123,7 @@ a:hover {
 #border {
     max-width: 900px;
     margin: 0 auto;
-    background: #f5f5f5dd;
+    background: #f5f5f5f0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     border-radius: 2px;
 }
@@ -134,7 +136,8 @@ a:hover {
    HEADER / NAV
    =========================== */
 .site-header {
-    border-bottom: 5px dotted #0808f866;
+    /*border-bottom: 5px dotted #0808f866;*/
+    border-bottom: 1px solid #ccc;
 }
 
 .navbar {
