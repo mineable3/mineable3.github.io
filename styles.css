@@ -295,5 +295,9 @@ a:hover {
     #smaller-title {
         display: flex;
     }
+
+    #pages-container {
+        padding: 1.5rem 0rem;
+    }
 }
 
