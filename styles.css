@@ -171,11 +171,16 @@ a:hover {
     padding-bottom: 0px;
 }
 
-#welcome-dates {
-    width: 100%;
+.welcome-dates {
+    /*width: 100%;
     letter-spacing: 0.02em;
     text-align: left;
-    padding-top: 0px;
+    padding-top: 0px;*/
+    margin-top: -10px;
+    margin-bottom: 0px;
+    padding: 0px;
+    align-self: center;
+    text-align: center;
 }
 
 #welcome-header {
