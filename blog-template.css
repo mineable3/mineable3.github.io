@@ -1,6 +1,6 @@
 /* ============== Blog Template ============== */
 
-#blogs-content {
+#blog-content {
     padding: 5%;
     padding-top: 1%;
 }
@@ -38,7 +38,3 @@
     padding: 0px;
 }
 
-#outside-pdf {
-    letter-spacing: 0.02em;
-    margin-bottom: 2%;
-}
