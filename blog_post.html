@@ -26,58 +26,8 @@
             </header>
 
             <div id="blog-content">
-              <!--
-                <script>
-                    function strip(html){
-                       let doc = new DOMParser().parseFromString(html, 'text/html');
-                       return doc.body.textContent || "";
-                    }
-                    
-                    function removeTags(str) {
-                        if ((str === null) || (str === ''))
-                            return false;
-                        else
-                            str = str.toString();
-
-                        // Regular expression to identify HTML tags in
-                        // the input string. Replacing the identified
-                        // HTML tag with a null string.
-                        return str.replace(/(<([^>]+)>)/ig, '');
-                    }
-
-                    // Getting the parameters from the URL
-                    const params = new URLSearchParams(window.location.search);
-
-                    // Raw parameters
-                    const raw_date = params.get('date');
-                    const raw_title = params.get('title');
-                    const raw_is_video = params.get('is_video');
-                    const raw_source = params.get('source');
-
-                    // Sanitizing inputs because the user can edit them
-                    const parts_of_date = raw_date.split('-');
-                    const date = new Date(Number(parts_of_date[0]), Number(parts_of_date[1]) - 1, Number(parts_of_date[2]));
-                    const title = removeTags(strip(raw_title));
-                    const is_video = Boolean(Number(raw_is_video));
-                    const source = removeTags(strip(raw_source));
-
-                    const month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-
-                    // This is where we will start inserting the HTML elements
-                    const existing_header = document.getElementById("blog-content");
-
-                    if (is_video) {
-                        existing_header.insertAdjacentHTML("afterbegin", `<iframe id="blog-source" src=${source} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`);
-                    } else {
-                        existing_header.insertAdjacentHTML("afterbegin", `<iframe id="blog-pdf" src="${source}" frameborder="0"></iframe>`);
-                    }
-
-                    existing_header.insertAdjacentHTML("afterbegin", `<div id="blog-date">${month_names[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()}</div>`);
-                    existing_header.insertAdjacentHTML("afterbegin", `<div id="blog-header">${title}</div>`);
-                </script>
-                -->
-
-              <script src="blog_parser.js"></script>
+                <!-- Displays the blog off of the info in the URL -->
+                <script src="blog_parser.js"></script>
             </div>
 
             <footer class="footer">

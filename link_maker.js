@@ -1,4 +1,4 @@
-async function make_link(header, id, is_video) {
+async function make_link(header, id) {
 
     try {
         // Fetches 'data.txt' from the same folder where the HTML/JS is hosted
@@ -8,14 +8,12 @@ async function make_link(header, id, is_video) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const text = await response.text();
-        const lines = text.split(/\r?\n/);
-
-        const title = lines[0];
+        const obj = await response.json();
 
         // This is where we will start inserting the HTML elements
         const existing_header = document.getElementById(header);
-        existing_header.insertAdjacentHTML("afterbegin", `<li class="blog-item"><a href="blog_post.html?id=${id}&is_video=${is_video}" rel="noreferrer noopener" class="blog-link">${title}</a></li>`);
+        //existing_header.insertAdjacentHTML("afterbegin", `<li class="blog-item"><a href="blog_post.html?id=${id}&is_video=${is_video}" rel="noreferrer noopener" class="blog-link">${title}</a></li>`);
+        existing_header.insertAdjacentHTML("afterbegin", `<li class="blog-item"><a href="blog_post.html?id=${id}" rel="noreferrer noopener" class="blog-link">${obj["title"]}</a></li>`);
 
     } catch (err) {
         console.error("Failed to fetch the file:", err);
