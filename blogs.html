@@ -16,13 +16,15 @@
     </div>
 
     <body>
+        <script src="link_maker.js"></script>
         <div id="border">
             <header class="site-header">
                 <nav class="navbar">
                     <div id="title">Emmet Spaeth</div>
                     <ul id="pages-container">
                         <li><a href="index.html" rel="noreferrer noopener" class="button">Home</a></li>
-                        <li><a href="Resume1.pdf" target="_blank" rel="noreferrer noopener" class="button">Résumé</a></li>
+                        <!--<li><a href="Resume1.pdf" target="_blank" rel="noreferrer noopener" class="button">Résumé</a></li> -->
+                        <li><a href="Resume1.pdf" target="_blank" rel="noreferrer noopener" class="button">Resume</a></li>
                         <li><a href="blogs.html" rel="noreferrer noopener" class="button">Blog</a></li>
                         <li><a href="contact.html" rel="noreferrer noopener" class="button">Contact</a></li>
                     </ul>
@@ -35,32 +37,20 @@
                 <div id="blog-date">Last updated: Mar 5, 2026</div>
 
                 <!-- The master list of blogs -->
-                <ul id="blog-list">
-                    <li class="blog-item">
-                        <a href="blog_post.html?date=2026-03-21&is_video=1&source=https://www.youtube.com/embed/Cb95Mkr5EuE&title=DEFLATE%20Compression%20(LZ77%20+%20Huffman%20codes)%20in%20.zip%20and%20.gz%20files" rel="noreferrer noopener" class="blog-link">DEFLATE Compression (LZ77 + Huffman codes) in .zip and .gz files</a>
-                    </li>
-                    <li class="blog-item">
-                        <a href="blog_post.html?date=2026-03-05&is_video=1&source=https://www.youtube.com/embed/9MQWwtIKWfk&title=Learn%20Granger%20Causality%20on%20Wikipedia%20with%20me!" rel="noreferrer noopener" class="blog-link">Learn Granger Causality on Wikipedia with me!</a>
-                    </li>
-                    <li class="blog-item">
-                        <a href="blog_post.html?date=2026-02-14&is_video=0&source=blog_dump/6.pdf&title=The Power of Reading Comprehension In Post-Literate Society" rel="noreferrer noopener" class="blog-link">The Power of Reading Comprehension In Post-Literate Society</a>
-                    </li>
-                    <li class="blog-item">
-                        <a href="blog_post.html?date=2026-01-07&is_video=0&source=blog_dump/uconn_rec_report.pdf&title=The%20UConn%20Recreation%20Center%20Usage%20Trends" rel="noreferrer noopener" class="blog-link">The UConn Recreation Center Usage Trends</a>
-                    </li>
-                    <li class="blog-item">
-                        <a href="blog_post.html?date=2025-12-16&is_video=1&source=https://www.youtube.com/embed/HEpPHUaa_cs&title=Reflections%20on%20Chapter%201%20of%20The%20Clash%20of%20Economic%20Ideas" rel="noreferrer noopener" class="blog-link">Reflections on Chapter 1 of The Clash of Economic Ideas</a>
-                    </li>
-                    <li class="blog-item">
-                        <a href="blog_post.html?date=2025-12-16&is_video=1&source=https://www.youtube.com/embed/Hq3yVRj0T3E&title=The%20Manager%20and%20its%20Role%20in%20FRC%20State%20Machine%20Programming" rel="noreferrer noopener" class="blog-link">The Manager and its Role in FRC State Machine Programming</a>
-                    </li>
-                    <li class="blog-item">
-                        <a href="blog_post.html?date=2025-12-16&is_video=1&source=https://www.youtube.com/embed/E92QgN6EB4s&title=Handlers%20and%20Their%20Role%20in%20FRC%20State%20Machine%20Programming" rel="noreferrer noopener" class="blog-link">Handlers and Their Role in FRC State Machine Programming</a>
-                    </li>
-                    <li class="blog-item">
-                        <a href="blog_post.html?date=2025-12-15&is_video=1&source=https://www.youtube.com/embed/Vr-79QyLZvI&title=Introduction%20to%20State%20Machines%20in%20FRC%20Programming" rel="noreferrer noopener" class="blog-link">Introduction to State Machines in FRC Programming</a>
-                    </li>
-                </ul>
+                <ol id="blog-list">
+                    <script type="module">
+                        import { make_link } from './link_maker.js';
+
+                        await make_link("blog-list",1,1);
+                        await make_link("blog-list",2,1);
+                        await make_link("blog-list",3,1);
+                        await make_link("blog-list",4,1);
+                        await make_link("blog-list",5,0);
+                        await make_link("blog-list",6,0);
+                        await make_link("blog-list",7,1);
+                        await make_link("blog-list",8,1);
+                    </script>
+                </ol>
             </div>
 
             <footer class="footer">

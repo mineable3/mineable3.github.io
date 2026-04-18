@@ -18,7 +18,7 @@
                     <div id="title">Emmet Spaeth</div>
                     <ul id="pages-container">
                         <li><a href="../index.html" rel="noreferrer noopener" class="button">Home</a></li>
-                        <li><a href="../Resume1.pdf" target="_blank" rel="noreferrer noopener" class="button">Résumé</a></li>
+                        <li><a href="../Resume1.pdf" target="_blank" rel="noreferrer noopener" class="button">Resume</a></li>
                         <li><a href="../blogs.html" rel="noreferrer noopener" class="button">Blog</a></li>
                         <li><a href="../contact.html" rel="noreferrer noopener" class="button">Contact</a></li>
                     </ul>
@@ -26,6 +26,7 @@
             </header>
 
             <div id="blog-content">
+              <!--
                 <script>
                     function strip(html){
                        let doc = new DOMParser().parseFromString(html, 'text/html');
@@ -74,6 +75,9 @@
                     existing_header.insertAdjacentHTML("afterbegin", `<div id="blog-date">${month_names[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()}</div>`);
                     existing_header.insertAdjacentHTML("afterbegin", `<div id="blog-header">${title}</div>`);
                 </script>
+                -->
+
+              <script src="blog_parser.js"></script>
             </div>
 
             <footer class="footer">
