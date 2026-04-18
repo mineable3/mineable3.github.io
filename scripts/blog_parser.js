@@ -8,7 +8,7 @@ const id = Number(raw_id);
 async function display_blog() {
     try {
         // Fetches the file from the blog dump
-        const response = await fetch(`./blog_dump/${id}.html`);
+        const response = await fetch(`/src/blogs/${id}.json`);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -26,8 +26,8 @@ async function display_blog() {
             existing_header.insertAdjacentHTML("afterbegin", `<iframe id="blog-source" src="${file["source"]}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`);
         } else {
             // Contents and document link
-            existing_header.insertAdjacentHTML("afterbegin", `<iframe id="blog-pdf" src="blog_dump/${id}.pdf" frameborder="0"></iframe>`);
-            existing_header.insertAdjacentHTML("afterbegin", `<div id="outside-pdf"> <a href="blog_dump/${id}.pdf" target="_blank" rel="noreferrer noopener">Open in separate page</a> </div>`);
+            existing_header.insertAdjacentHTML("afterbegin", `<iframe id="blog-pdf" src="/src/blogs/${id}.pdf" frameborder="0"></iframe>`);
+            existing_header.insertAdjacentHTML("afterbegin", `<div id="outside-pdf"> <a href="/src/blogs/${id}.pdf" target="_blank" rel="noreferrer noopener">Open in separate page</a> </div>`);
         }
         
         // Title and date
