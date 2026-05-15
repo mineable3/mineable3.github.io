@@ -67,6 +67,7 @@ body {
         radial-gradient(50% 50%,var(--_g)) calc(var(--s)/2) calc(var(--s)/2)
         var(--c1);
     background-size: var(--s) var(--s);
+    background-attachment: fixed;
 
     padding: 3rem 1rem;
     line-height: 1.6;
@@ -149,12 +150,12 @@ a:hover {
     padding-right: 0.0rem;
 }
 
-.navbar a {
+nav a {
     text-decoration: none;
     color: #151515;
 }
 
-.navbar a:hover {
+nav a:hover {
     color: #686868;
     text-decoration: underline;
 }
@@ -269,7 +270,7 @@ a:hover {
 }
 
 #flower1-img {
-    position: absolute;
+    position: fixed;
     width: auto;
     height: 140%;
     right: -2%;

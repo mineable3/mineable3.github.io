@@ -2,10 +2,10 @@
 
 Joysticks are a highly effective tool to produce analog inputs. They are
 incredibly common, finding their way into fighter jet cockpits, video games,
-and certain notorious deep sea submersibles (the Titan submersible). Their
+and certain notorious deep sea expeditions (the Titan submersible). Their
 intuitive design make them easy to use and a good choice for many systems.
 
-However, raw inputs from a joystick are noisy and imprecise, rarely used
+However, raw inputs from a joystick are noisy and imprecise and are rarely used
 directly in practice. This article will cover some techniques to improve the 
 level of precision when using joysticks.
 
