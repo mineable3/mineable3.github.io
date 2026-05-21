@@ -1,0 +1,4 @@
+# Introduction to State Machines in FRC programming
+
+<iframe id="blog-source" src="https://www.youtube.com/embed/Vr-79QyLZvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+

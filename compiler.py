@@ -1,21 +1,22 @@
 import json
+import sys
 
 if __name__ == "__main__":
     # Define the filenames
-    output_file = "inputs/index.html"
+    output_file = f"{sys.argv[1]}/index.html"
 
     try:
         # 1. Read the contents into string variables
-        with open("inputs/header.html", 'r') as f1:
+        with open("./src/stubs/header.html", 'r') as f1:
             header = f1.read()
         
-        with open("inputs/body.html", 'r') as f2:
+        with open(f"{sys.argv[1]}/body.html", 'r') as f2:
             body = f2.read()
             
-        with open("inputs/closing.html", 'r') as f3:
+        with open("./src/stubs/closing.html", 'r') as f3:
             closing = f3.read()
 
-        with open("inputs/meta.json", 'r') as f4:
+        with open(f"{sys.argv[1]}/meta.json", 'r') as f4:
             meta = json.loads(f4.read())
 
         header = header.replace("LANG_GOES_HERE", meta["lang"])
@@ -30,8 +31,6 @@ if __name__ == "__main__":
             out.write(body)
             out.write(closing)
             
-        print("Done.")
-
     except FileNotFoundError as e:
         print(f"Error: One of the input files was not found. {e}")
     except Exception as e:

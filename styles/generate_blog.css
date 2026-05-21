@@ -108,17 +108,34 @@ nav a:hover {
   font-size: 14pt;
   margin-bottom: 1em;
 }
-.author {
-    text-align: center;
-}
-.date {
-    text-align: center;
-}
 h1 {
     display: none;
 }
+
+#title-block-header {
+    margin-top: -3%;
+    text-align: left;
+    padding-left: 12%;
+    padding-bottom: 0%;
+    margin-bottom: 4%;
+}
 .title {
     display: block;
+    letter-spacing: 0.02em;
+    width: 80%;
+    font-family: Caudex;
+    font-size: 2.8em;
+    margin-bottom: 2%;
+    border-bottom: 3px solid #007bff;
+    align-self: bottom;
+    line-height: 1.3em;
+}
+.author {
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+}
+.date {
+    padding-bottom: 0%;
 }
 .footer {
   text-align: center;
@@ -126,10 +143,19 @@ h1 {
   font-size: 0.9rem;
   color: #333;
 }
-.display {
+.math.display {
     display: inline-block;
     width: 100%;
     overflow-x: scroll
+}
+.code {
+    font-weight: bold;
+}
+iframe {
+    width: 100%;
+    height: 355px;
+    margin: 0px;
+    padding: 0px;
 }
 @media (max-width: 600px) {
   body {
@@ -159,7 +185,11 @@ h1 {
   h2, h3, h4 {
     page-break-after: avoid;
   }
+  a:after {
+    content: " (" attr(href) ")";
+  }
   #border {
+      all: unset;
       margin: 0 auto;
       background-color: transparent;
   }
@@ -167,14 +197,34 @@ h1 {
     all: unset;
     max-width: 80vw;
   }
+  #content p {
+    font-size: 12pt;
+  }
   .site-header {
       display: none;
+  }
+  .math.display {
+    display: block;        /* Allows the element to respect normal flow */
+    width: auto;           /* Permits the box to shrink/grow with content */
+    max-width: 100%;       /* Ensures it doesn't push past the parent container */
+    overflow-x: show;   /* Removes the scrollbar and shows all content */
+    white-space: normal;   /* Encourages wrapping points if the renderer supports them */
+    overflow-wrap: break-word !important; /* Force-breaks long strings of numbers if necessary */
+    width: 100%;
+    max-width: 100%;
+    page-break-inside: auto;
+  }
+  .code {
+    display: none;
   }
 }
 p {
 }
 img {
-  max-width: 100%;
+  display: block;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Times New Roman', serif;

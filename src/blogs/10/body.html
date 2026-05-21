@@ -5,9 +5,9 @@ are incredibly common, finding their way into fighter jet cockpits,
 video games, and certain notorious deep sea expeditions (the Titan
 submersible). Their intuitive design make them easy to use and a good
 choice for many systems.</p>
-<p>However, raw inputs from a joystick are noisy and imprecise, rarely
-used directly in practice. This article will cover some techniques to
-improve the level of precision when using joysticks.</p>
+<p>However, raw inputs from a joystick are noisy and imprecise and are
+rarely used directly in practice. This article will cover some
+techniques to improve the level of precision when using joysticks.</p>
 <h2 id="deadbands">Deadbands</h2>
 <p>Joystick drift refers to the small error in measurement that tends to
 occur after considerable use of a controller. Drift is present in all
@@ -44,7 +44,7 @@ f(x) =
 x &amp; \text{if } |x| &gt; d \\
 \end{cases}
 \]</span></p>
-<details>
+<details class="code">
 <summary>
 Java
 </summary>
@@ -61,7 +61,7 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </details>
-<details>
+<details class="code">
 <summary>
 Python
 </summary>
@@ -112,7 +112,7 @@ f(x) =
 \frac{1}{1 - d} (x - d) &amp; \text{if } x &lt; 0
 \end{cases}
 \]</span></p>
-<details>
+<details class="code">
 <summary>
 Java
 </summary>
@@ -131,7 +131,7 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </details>
-<details>
+<details class="code">
 <summary>
 Python
 </summary>
@@ -183,7 +183,7 @@ f(x) =
 \text{Let } x_{out} = f(\|v\|) \cdot \cos(\theta) \\
 \text{Let } y_{out} = f(\|v\|) \cdot \sin(\theta) \\
 \]</span></p>
-<details>
+<details class="code">
 <summary>
 Java
 </summary>
@@ -208,7 +208,7 @@ class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">new</span> <span class="dt">double</span><span class="op">[]{</span>xOut<span class="op">,</span> yOut<span class="op">};</span></span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </details>
-<details>
+<details class="code">
 <summary>
 Python
 </summary>
@@ -304,7 +304,7 @@ P(x) &amp; \text{if } 0 \leq x \leq 1 \\
 630239.1878x - 124006.3873 &amp; 0.935956 &lt; x \leq 1
 \end{cases}
 \]</span></p>
-<details>
+<details class="code">
 <summary>
 Java
 </summary>

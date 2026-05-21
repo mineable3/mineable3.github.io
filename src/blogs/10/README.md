@@ -51,7 +51,7 @@ x & \text{if } |x| > d \\
 \end{cases}
 $$
 
-<details>
+<details class="code">
     <summary> Java </summary>
 
 ```java
@@ -68,7 +68,7 @@ public float applyDeadBand(float x) {
 }
 ```
 </details>
-<details>
+<details class="code">
     <summary> Python </summary>
 
 ```python
@@ -116,7 +116,7 @@ f(x) =
 \end{cases}
 $$
 
-<details>
+<details class="code">
     <summary> Java </summary>
 
 ```java
@@ -135,7 +135,7 @@ public float applyDeadBand(float x) {
 }
 ```
 </details>
-<details>
+<details class="code">
     <summary> Python </summary>
 
 ```python
@@ -186,7 +186,7 @@ f(x) =
 \text{Let } y_{out} = f(\|v\|) \cdot \sin(\theta) \\
 $$
 
-<details>
+<details class="code">
     <summary> Java </summary>
 
 ```java
@@ -211,7 +211,7 @@ public double[] applyDeadBand(double xIn, double yIn) {
 }
 ```
 </details>
-<details>
+<details class="code">
     <summary> Python </summary>
 
 ```python
@@ -312,7 +312,7 @@ P(x) & \text{if } 0 \leq x \leq 1 \\
 \end{cases}
 $$
 
-<details>
+<details class="code">
     <summary> Java </summary>
 
 ```java
