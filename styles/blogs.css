@@ -42,7 +42,7 @@
 }
 
 #flower3-img {
-    position: absolute;
+    position: fixed;
     width: 60%;
     height: auto;
     right: -16%;

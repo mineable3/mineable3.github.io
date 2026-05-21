@@ -30,11 +30,12 @@
 }
 
 #flower2-img {
-    position: absolute;
+    position: fixed;
     width: auto;
     height: 140%;
     right: -15%;
     top: -23%;
     z-index: -1;
+    overflow: hidden;
 }
 
