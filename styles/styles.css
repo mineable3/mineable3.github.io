@@ -93,7 +93,7 @@ h1 {
 
 p {
     letter-spacing: 0.04em;
-    padding: 3%;
+    padding: 2%;
     padding-right: 5%;
     padding-left: 0;
     line-height: 1.5em;
@@ -154,7 +154,6 @@ nav a:hover {
 
 #paragraph {
     width: 60%;
-    font-size: 1.0rem;
     letter-spacing: 10.01px;
 }
 
@@ -253,7 +252,7 @@ nav a:hover {
     position: fixed;
     width: auto;
     height: 140%;
-    right: -2%;
+    right: -6%;
     bottom: -30%;
     z-index: -1;
     overflow: hidden;
