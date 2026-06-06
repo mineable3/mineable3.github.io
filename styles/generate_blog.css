@@ -1,162 +1,78 @@
-html {
-  color: #1a1a1a;
-  background-color: #fdfdfd;
-}
-body {
-    /* Circle pattern */
-    --s: 140px;
-    /*--c1: #f6eac8;*/
-    /*--c2: #ecdfbd;*/
-    --c1: #f0e4c2;
-    --c2: #ecdfbd;
-
-    --_g: 
-        var(--c1) 0%  5% ,var(--c2) 6%  15%,var(--c1) 16% 25%,var(--c2) 26% 35%,var(--c1) 36% 45%,
-        var(--c2) 46% 55%,var(--c1) 56% 65%,var(--c2) 66% 75%,var(--c1) 76% 85%,var(--c2) 86% 95%,
-        #0000 96%;
-    background:
-        radial-gradient(50% 50% at 0 100%,var(--_g)),
-        radial-gradient(50% 50% at 100% 0,var(--_g)),
-        radial-gradient(50% 50%,var(--_g)),
-        radial-gradient(50% 50%,var(--_g)) calc(var(--s)/2) calc(var(--s)/2)
-        var(--c1);
-    background-size: var(--s) var(--s);
-    background-attachment: fixed;
-
-    padding: 3rem 1rem;
-    line-height: 1.6em;
-    /*letter-spacing: 0.1em;*/
-    overflow-x: hidden;
-
-}
-#border {
-    max-width: 900px;
-    margin: 0 auto;
-    background: #f5f5f5f4;
-    box-shadow: 0 10px 30px rgba(0, 0, 20, 0.85);
-    border-radius: 2px;
-}
-.site-header {
-    /*border-bottom: 5px dotted #0808f866;*/
-    border-bottom: 1px solid #ccc;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /*padding: 1.5rem 2rem;*/
-    padding-left: 2.5rem;
-    padding-right: 0.0rem;
-}
-nav a {
-    text-decoration: none;
-    color: #151515;
-}
-nav a:hover {
-    color: #686868;
-    text-decoration: underline;
-}
-#title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: -0.15rem;
-    /*font-family: Playfair, sans-serif;*/
-    padding: 0px;
-    padding-top: 1%;
-    margin: 0px;
-    color: rgb(150, 150, 250);
-    text-shadow:
-        
-        1px 1px 1px black,
-        -1px 1px 1px black,
-        1px -1px 1px black,
-        -1px -1px 1px black;
-        
-        /*
-        1px 1px 2px red,
-        0 0 1em blue,
-        0 0 0.2em blue;
-        */
-}
-#smaller-title {
-    display: none;
-    font-family: Playfair, sans-serif;
-}
-#pages-container {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    padding: 1.5rem 2rem;
-}
-#content {
-  margin: 0 auto;
-  max-width: 70%;
-  overflow-wrap: normal;
-  text-rendering: optimizeLegibility;
-  font-kerning: normal;
-  font-family: 'Times New Roman', serif;
-  text-align: justify;
-}
-#content a {
-    color: #2e69ff;
-}
-#content a:visited {
-    color: #2e69ff;
-}
-#content p {
-  font-size: 14pt;
-  margin-bottom: 1em;
-}
 h1 {
+    max-width: 100%;
+    padding: 0px 3%;
+}
+img {
+  display: block;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+figcaption {
+    font-style: italic;
+    padding-left: 3%;
+}
+#subtitle {
+    padding: 0px 8%;
+}
+
+.date {
+}
+
+#content {
+    padding: 0px 14%;
+}
+
+#content h1, h2, h3, h4, h5, h6 {
+    margin: 2% 0px;
+    border-bottom: 1px dashed #007bff;
+}
+
+#content h1 {
     display: none;
 }
 
-#title-block-header {
-    margin-top: -3%;
-    text-align: left;
-    padding-left: 12%;
-    padding-bottom: 0%;
-    margin-bottom: 4%;
+#content p {
+    padding: 1% 0px;
+    margin: 0;
 }
-.title {
-    display: block;
-    letter-spacing: 0.02em;
-    width: 80%;
-    font-family: Caudex;
-    font-size: 2.8em;
-    margin-bottom: 2%;
-    border-bottom: 3px solid #007bff;
-    align-self: bottom;
-    line-height: 1.3em;
-}
-.author {
-    padding-bottom: 0%;
-    margin-bottom: 0%;
-}
-.date {
-    padding-bottom: 0%;
-}
-.footer {
-  text-align: center;
-  padding: 1.0rem;
-  font-size: 0.9rem;
-  color: #333;
-}
-.math.display {
-    display: inline-block;
-    width: 100%;
-    overflow-x: scroll
-}
-.code {
-    font-weight: bold;
-}
+
 iframe {
     width: 100%;
     height: 355px;
     margin: 0px;
     padding: 0px;
 }
+blockquote {
+  margin: 1em 0 1em 1.7em;
+  padding-left: 1em;
+  border-left: 2px solid #e6e6e6;
+  color: #606060;
+}
+code {
+  font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+  font-size: 85%;
+  margin: 0;
+  hyphens: manual;
+}
+pre {
+  margin: 1em 0;
+  overflow: auto;
+}
+pre code {
+  padding: 0;
+  overflow: visible;
+  overflow-wrap: normal;
+}
+.sourceCode {
+ background-color: transparent;
+ overflow: visible;
+}
+hr {
+  background-color: #1a1a1a;
+  border: none;
+  height: 1px;
+  margin: 1em 0;
 @media (max-width: 600px) {
   body {
     font-size: 0.9em;
@@ -218,117 +134,9 @@ iframe {
     display: none;
   }
 }
-p {
-}
-img {
-  display: block;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Times New Roman', serif;
-  margin-top: 1.4em;
-}
-h5, h6 {
-  font-size: 1em;
-  font-style: italic;
-}
-h6 {
-  font-weight: normal;
-}
-ol, ul {
-  padding-left: 1.7em;
-  margin-top: 1em;
-}
-li > ol, li > ul {
-  margin-top: 0;
-}
-blockquote {
-  margin: 1em 0 1em 1.7em;
-  padding-left: 1em;
-  border-left: 2px solid #e6e6e6;
-  color: #606060;
-}
-code {
-  font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-  font-size: 85%;
-  margin: 0;
-  hyphens: manual;
-}
-pre {
-  margin: 1em 0;
-  overflow: auto;
-}
-pre code {
-  padding: 0;
-  overflow: visible;
-  overflow-wrap: normal;
-}
-.sourceCode {
- background-color: transparent;
- overflow: visible;
-}
-hr {
-  background-color: #1a1a1a;
-  border: none;
-  height: 1px;
-  margin: 1em 0;
-}
-table {
-  margin: 1em 0;
-  border-collapse: collapse;
-  width: 100%;
-  overflow-x: auto;
-  display: block;
-  font-variant-numeric: lining-nums tabular-nums;
-}
-table caption {
-  margin-bottom: 0.75em;
-}
-tbody {
-  margin-top: 0.5em;
-  border-top: 1px solid #1a1a1a;
-  border-bottom: 1px solid #1a1a1a;
-}
-th {
-  border-top: 1px solid #1a1a1a;
-  padding: 0.25em 0.5em 0.25em 0.5em;
-}
-td {
-  padding: 0.125em 0.5em 0.25em 0.5em;
-}
-header {
-  margin-bottom: 4em;
-  text-align: center;
-}
-#TOC li {
-  list-style: none;
-}
-#TOC ul {
-  padding-left: 1.3em;
-}
-#TOC > ul {
-  padding-left: 0;
-}
-#TOC a:not(:hover) {
-  text-decoration: none;
-}
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-/* The extra [class] is a hack that increases specificity enough to
-   override a similar rule in reveal.js */
-ul.task-list[class]{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  font-size: inherit;
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
+
+/* =============== CSS for syntax highlighting =============== */
+
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
