@@ -69,7 +69,6 @@ body {
     background-attachment: fixed;
 
     padding: 3rem 1rem;
-    line-height: 1.6;
     letter-spacing: 0.1em;
     overflow-x: hidden;
 }
@@ -93,10 +92,11 @@ h1 {
 }
 
 p {
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     padding: 3%;
     padding-right: 5%;
     padding-left: 0;
+    line-height: 1.5em;
 }
 
 a {

@@ -4,16 +4,6 @@
 
 h1 {
     max-width: 30%;
-    margin-bottom: 1%;
-}
-
-#contact-header {
-}
-
-#bar {
-    display: none;
-    border-bottom: 3px solid #007bff;
-    margin-bottom: 2%;
 }
 
 #contact-links {
