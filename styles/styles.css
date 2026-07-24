@@ -109,6 +109,10 @@ a:hover {
     color: #99b6ff;
 }
 
+li {
+    letter-spacing: 0.04em;
+}
+
 /* ============== Landing page ============== */
 
 #border {

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <!-- Metadata and basic settings -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta name="author" content="Emmet Spaeth" />
+        <meta name="dcterms.date" content="Jul 23, 2026" />
+        <meta name="keywords" content="" />
+        <title>Generating Random Text With Markov Chains</title>
+        <link rel="icon" href="/assets/flower_1.ico" type="ico">
+        <link rel="stylesheet" href="/styles/normalize.css">
+        <link rel="stylesheet" href="/styles/styles.css">
+        <link rel="stylesheet" href="/styles/generate_blog.css">
+        <script src="/scripts/mathjax.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div id="border">
+            <header id="site-header">
+                <div id="my-name">Emmet Spaeth</div>
+                <nav class="navbar">
+                    <ul id="pages-container">
+                        <li><a href="/index.html" rel="noreferrer noopener" class="button">Home</a></li>
+                        <li><a href="/assets/Resume1.pdf" target="_blank" rel="noreferrer noopener" class="button">Résumé</a></li>
+                        <li><a href="/src/blog_list.html" rel="noreferrer noopener" class="button">Blog</a></li>
+                        <li><a href="/src/contact.html" rel="noreferrer noopener" class="button">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <header id="title-block-header">
+                <h1 class="title">Generating Random Text With Markov Chains</h1>
+                <div id="subtitle">
+                    <span class="author">Emmet Spaeth - </span>
+                    <span class="date">Jul 23, 2026</span>
+                </div>
+            </header>
+
+            <div id="content">
+
+<h1 id="generating-random-text-with-markov-chains">Generating Random
+Text With Markov Chains</h1>
+<p><strong>The code is available to view and play with on <a
+href="https://github.com/mineable3/markov_chain_predictions">Github</a>.</strong>
+I will have some code snippets, but not the program as a whole.</p>
+<p><strong>The goal:</strong> Generate large amounts of text written in
+the same style as the source material.</p>
+<h2 id="the-algorithm">The Algorithm</h2>
+<p>The algorithm consists of two parts, preprocessing of the training
+text and random generation of new text. The first part establishes the
+probability distribution and Markov chain and the second part,
+generating the text, is what matters for optimization because after
+taking the limit where the number of words to generate goes to infinity
+the first part goes to zero with how much it contributes to run
+time.</p>
+<h3 id="preprocessing">Preprocessing</h3>
+<p>To start, we need to parse the training text word by word. On each
+word, we will increment the count for the number of times the next word
+has appeared after the current word.</p>
+<p>Example given:</p>
+<blockquote>
+<p>It was the best of times, it was the worst of times.</p>
+</blockquote>
+<p>Starting on the word <code>It</code> we would record that
+<code>was</code> followed <code>It</code> once. Then we would move to
+the next word. On <code>was</code> we would record <code>the</code> as
+following <code>was</code> once. We would continue on until the second
+occurrence of <code>it</code> where we now record that <code>was</code>
+followed <code>it</code> twice. Then, <code>the</code> followed
+<code>was</code> twice. However, when we reach the second occurrence of
+<code>the</code> we now record that <code>best</code> has followed once
+<em>and</em> <code>worst</code> has followed once.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># gets a list with all the words in the training text in order</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;moby_dick.txt&quot;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> raw_text:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> raw_text.read().split()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>frequency_table <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, word <span class="kw">in</span> <span class="bu">enumerate</span>(data):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The last word of the data</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">&gt;=</span> <span class="bu">len</span>(data) <span class="op">-</span> <span class="dv">1</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        frequency_table[word] <span class="op">=</span> {<span class="st">&quot;EOF&quot;</span>: <span class="dv">1</span>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ensures a dictionary exists for each word we see</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> word <span class="kw">not</span> <span class="kw">in</span> frequency_table:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        frequency_table[word] <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    next_word <span class="op">=</span> data[i<span class="op">+</span><span class="dv">1</span>]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> next_word <span class="kw">in</span> frequency_table[word]:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Both the current and next word have been seen before</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        frequency_table[word][next_word] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The next word is new</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        frequency_table[word][next_word] <span class="op">=</span> <span class="dv">1</span></span></code></pre></div>
+<p>Continuing on through the whole text will leave us with a list of
+words and frequencies of the words that followed it. To turn the
+frequencies into probabilities, simply divide each frequency by the
+number of times the current word has appeared. Arranging words as states
+and the edge weights according to the probability of following the
+current word. We can represent the training text as a Markov chain.</p>
+<p><img src="markov-chain-example.png" /></p>
+<p>The Markov chain can be represented by a lookup table of
+probabilities given the current state or word. In Python, I used a
+dictionary of dictionaries.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>totals <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Counting totals</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word, tallies <span class="kw">in</span> frequency_table.items():</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    totals[word] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> count <span class="kw">in</span> tallies.values():</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        totals[word] <span class="op">+=</span> count</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating probabilities</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word, tallies <span class="kw">in</span> frequency_table.items():</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> next_word, count <span class="kw">in</span> tallies.items():</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        frequency_table[word][next_word] <span class="op">=</span> count <span class="op">/</span> totals[word]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>probabilities <span class="op">=</span> frequency_table</span></code></pre></div>
+<p><img src="probability_lookup_table.png" /></p>
+<h3 id="generating-text">Generating Text</h3>
+<p>The Markov chain that we have created stores the statistical
+distribution of words in our training text. Randomly walking through the
+Markov chain will produce random text that has the same distribution of
+words as the training text and as a result will roughly sound like
+it.</p>
+<p>We will use a technique called <em>rejection sampling</em> to
+generate text. Start by picking a random word.</p>
+<ol type="1">
+<li>Lookup the possible words that can follow the current word and their
+associated probabilities.</li>
+<li>Generate a random value from 0 to 1.</li>
+<li>Start a running total at 0.</li>
+<li>Take a possible next word for the current word and add its
+probability to the running total.</li>
+<li>If the random value is less than the running total, add the current
+option of next word to the output text and set it to be the current
+word.</li>
+<li>If the random value is NOT less than the running total, go back to
+step 4.</li>
+</ol>
+<p><img src="flow-chart.png" /></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The number of words to generate</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100000</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>all_words <span class="op">=</span> <span class="bu">list</span>(probabilities.keys())</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> all_words[<span class="bu">int</span>(random.random() <span class="op">*</span> <span class="bu">len</span>(all_words))]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    val <span class="op">=</span> random.random()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    running_total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the random value is less than the threshold</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for a word, keep that word.</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> val <span class="op">&gt;=</span> running_total:</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        next_word <span class="op">=</span> <span class="bu">list</span>(probabilities[word])[i]</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> next_word <span class="op">==</span> <span class="st">&quot;EOF&quot;</span>:</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            next_word <span class="op">=</span> data[<span class="dv">0</span>]</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        running_total <span class="op">+=</span> <span class="bu">list</span>(probabilities[word].values())[i]</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">#print(next_word, end=&#39; &#39;)</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(next_word, end<span class="op">=</span><span class="st">&#39; &#39;</span>, flush<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    word <span class="op">=</span> next_word</span></code></pre></div>
+<p>When I first learned about this algorithm, it raised a lot of
+questions. I couldn’t understand how it was able to sample based on the
+distribution we wanted. To better explain it, I made the diagram below.
+The diagram shows three iterations through the algorithm with some
+example words probabilities. The random value is 0.47. The red sections
+are where the current choice of possible next word will be rejected, the
+green section is where it will be accepted, and the blue sections are
+almost another rejection because the algorithm would have already
+ended.</p>
+<p><img src="rejection_sampling.png" /></p>
+<p><strong>NOTE:</strong> The program we have written so far recognizes
+words with punctuation or capitalization as unique words. In the
+optimized version on Github, I separate words from their punctuation,
+but never deal with capitalization.</p>
+<h2 id="optimization">Optimization</h2>
+<p>I timed how long it took to generate 100,000 words with <em>Moby
+Dick</em> as the training text. The times are going to vary depending on
+your hardware and implementation of the algorithm, but they should give
+you an idea of why optimization is needed here.</p>
+<p>Before optimization:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> time python main.py</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">18</span> minutes</span></code></pre></div>
+<p>After optimization:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> time python main.py</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">5</span> seconds</span></code></pre></div>
+<p><strong>NOTE:</strong> These optimizations are for time efficiency,
+not space efficiency. For example, memoization makes the program run
+much faster, but takes up more memory to store previous calculations.
+I’m not sure how Numpy affects space efficiency, but it does make it
+much faster.</p>
+<h3 id="numpy">Numpy</h3>
+<p>Python is a slow language, a cheap way to make your program run
+faster without having to do any algorithmic optimization is to not run
+Python code. Numpy is written in C which makes it much faster. I
+switched all the native Python lists to Numpy arrays and built-in
+methods.</p>
+<p>For example, at the start of the algorithm to pick the first
+word:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>all_words <span class="op">=</span> np.array(<span class="bu">list</span>(probabilities.keys()))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> all_words[<span class="bu">int</span>(rng.random() <span class="op">*</span> all_words.size)]</span></code></pre></div>
+<h3 id="rng.choice-instead-of-rejection-sampling">rng.choice Instead of
+Rejection Sampling</h3>
+<p>Sampling from a discrete probability distribution is a very common
+problem, so the good folks at Numpy wrote a method to do that into their
+rng class. This replaces a loop may iterate through all the possible
+next words with a single method call.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>next_word <span class="op">=</span> rng.choice(possible_next_words[word], p<span class="op">=</span>next_word_probabilities[word])</span></code></pre></div>
+<h3 id="memoization">Memoization</h3>
+<p>Inside the text generation loop, the list of possible next words and
+list of probabilities gets regenerated for every iteration. Instead of
+regenerating those lists every loop, the program generates them once for
+the current word and stores them for later. When it lands on a word it’s
+already seen, it can just reference the lists instead of make new
+ones.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This was a really fun algorithm to write and the text it generates is
+great to play around with. The text it generates feels almost right, but
+never quite makes any sense. It’s like the uncanny valley of text
+because the program only generates words that it has seen follow the
+current word, each word will always logically follow the one before it.
+As you read, word by word, it makes sense to see each word follow the
+current one, but as your brain tries to piece together the meaning it
+just can’t. It’s frustratingly close to making sense, but it never
+does.</p>
+<p>While building this project I showed a piece of text my program had
+generated to a coworker of mine. I told him it was an excerpt from
+<em>Moby Dick</em> and asked him to describe what was happening. He sat
+there struggling to understand it for 20 minutes before I felt bad
+enough to let him know what he was reading. Using older writing like
+<em>Moby Dick</em> (or <em>The Complete Works of Shakespeare</em>) makes
+it even harder to recognize that the words are meaningless because the
+source material is already so hard for modern English speakers to
+read.</p>
+<p>I hope you had as much fun building this algorithm as I did!</p>
+
+        </div>
+            <footer class="footer">
+                <p>&copy; 2026 Emmet Spaeth</p>
+            </footer>
+        </div>
+    </body>
+</html>
+
