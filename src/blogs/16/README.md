@@ -90,6 +90,13 @@ for word, tallies in frequency_table.items():
 probabilities = frequency_table
 ```
 
+![](probability_table_shakespeare.png)
+
+Here is another example, more realistic example. Usually the input text is
+larger which means the table will have more entries with much smaller
+probabilities for each word. Every row should still add up to 100%, it will
+just be spread out over more words.
+
 ![](probability_lookup_table.png)
 
 ### Generating Text
