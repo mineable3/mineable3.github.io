@@ -73,11 +73,15 @@ pre {
   padding: 1.0em 4%;
   margin: 1em 0;
   background: #e1e1e1;
-  overflow-wrap: normal;
   display: inline-block; 
   min-width: 100%;
+  max-width: 100%;
+  overflow-x: scroll;
 }
 pre code {
+  display: inline-block;
+  max-width: 100%;
+  line-height: 1.25em;
 }
 .math.display {
   display: inline-block;
@@ -155,7 +159,7 @@ hr {
 /* =============== CSS for syntax highlighting =============== */
 
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25em; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }

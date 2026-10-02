@@ -7,7 +7,7 @@
         <meta name="author" content="Emmet Spaeth" />
         <meta name="dcterms.date" content="Oct 01, 2026" />
         <meta name="keywords" content="" />
-        <title>Interesting Proof For The Sum of Powers of Two</title>
+        <title>Interesting Proof For The Sum of Powers of Two and Other Math Tricks</title>
         <link rel="icon" href="/assets/flower_1.ico" type="ico">
         <link rel="stylesheet" href="/styles/normalize.css">
         <link rel="stylesheet" href="/styles/styles.css">
@@ -30,7 +30,7 @@
             </header>
 
             <header id="title-block-header">
-                <h1 class="title">Interesting Proof For The Sum of Powers of Two</h1>
+                <h1 class="title">Interesting Proof For The Sum of Powers of Two and Other Math Tricks</h1>
                 <div id="subtitle">
                     <span class="author">Emmet Spaeth - </span>
                     <span class="date">Oct 01, 2026</span>
@@ -39,8 +39,9 @@
 
             <div id="content">
 
-<h1 id="interesting-proof-for-the-sum-of-powers-of-two">Interesting
-Proof For The Sum of Powers of Two</h1>
+<h1
+id="interesting-proof-for-the-sum-of-powers-of-two-and-other-math-tricks">Interesting
+Proof For The Sum of Powers of Two and Other Math Tricks</h1>
 <!--
 $sum_(k=0)^n 2^k$ equal to $2^(n+1) - 1$
 -->
@@ -85,6 +86,77 @@ both sides, leaves us with our proof.</p>
 \sum_{k = 0}^{n}2^{k} = 2^{n+1} - 1
 \]</span></p>
 <p><em>What an odd number!</em></p>
+<h2 id="a-trick-for-computing-multiplication-and-division-by-two">A
+trick for computing multiplication and division by two</h2>
+<p>We will follow a similar process as above and start in decimal.</p>
+<p>Let’s say you want to multiply <span
+class="math inline">\(23\)</span> by <span
+class="math inline">\(10\)</span>. Our number system is in base ten,
+which means that <span class="math inline">\(23\)</span> gets shifted
+over into the ten’s place giving you <span
+class="math inline">\(230\)</span>.</p>
+<p><span class="math display">\[
+23 * 10 = 230
+230 * 10 = 2300
+2300 * 10 = 23000
+23000 / 10 = 2300
+2300 / 10 = 230
+\]</span></p>
+<p>Now let’s say you want to multiply <span
+class="math inline">\(23\)</span> by <span
+class="math inline">\(2\)</span> resulting in <span
+class="math inline">\(46\)</span>. Converting this into binary leaves
+you with</p>
+<pre><code>    10111 // 23
+x      10 // 2
+-----------
+   101110</code></pre>
+<p>and now <span class="math inline">\(46 \times 2\)</span></p>
+<pre><code>   101110 // 46
+x      10 // 2
+-----------
+  1011100</code></pre>
+<p>Notice how multiplying by <span class="math inline">\(2\)</span>
+simply shifts the number over. This is just like multiplying by ten. In
+fact, this works for any number.</p>
+<p>To calculate a product:</p>
+<ol type="1">
+<li>Convert the first number into the base of second number.</li>
+<li>Shift the first number to the left.</li>
+<li>Convert back to base 10 to get the result.</li>
+</ol>
+<p>To calculate a quotient:</p>
+<ol type="1">
+<li>Convert the first number into the base of second number.</li>
+<li>Shift the first number to the right.</li>
+<li>Convert back to base 10 to get the result.</li>
+</ol>
+<h3 id="here-are-a-couple-examples">Here are a couple examples</h3>
+<pre><code>7 x 46 = 322
+
+   64 // 46
+ x 10 // 7
+-----------
+  640 = 6*(7^2) + 4*(7^1) + 0*(7^0) = 322 in base 10</code></pre>
+<pre><code>3 x 83 = 249
+
+   10002 // 83
+ x    10 // 3
+-------------- 
+  100020 = 1*(3^5) + 0 + 0 + 0 + 2*(3^1) + 0 = 249 in base 10</code></pre>
+<pre><code>5 x 205 = 1025
+
+   1310 // 205
+ x   10 // 5
+-------------
+  13100 = 1*(5^4) + 3*(5^3) + 1*(5^1) + 0 + 0 = 1025 in base 10</code></pre>
+<p>You can do you own examples and change base easily with the
+<code>bc</code> utility (on Linux).</p>
+<pre><code>echo &quot;obase=2;21&quot; | bc 
+10101 # converting 21 into binary</code></pre>
+<p>or</p>
+<pre><code>echo &quot;ibase=6;100&quot; | bc
+36 # converting 100 into base 10 from base 6</code></pre>
 
         </div>
             <footer class="footer">
