@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <!-- Metadata and basic settings -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta name="author" content="Emmet Spaeth" />
+        <meta name="dcterms.date" content="Oct 01, 2026" />
+        <meta name="keywords" content="" />
+        <title>Interesting Proof For The Sum of Powers of Two</title>
+        <link rel="icon" href="/assets/flower_1.ico" type="ico">
+        <link rel="stylesheet" href="/styles/normalize.css">
+        <link rel="stylesheet" href="/styles/styles.css">
+        <link rel="stylesheet" href="/styles/generate_blog.css">
+        <script src="/scripts/mathjax.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div id="border">
+            <header id="site-header">
+                <div id="my-name">Emmet Spaeth</div>
+                <nav class="navbar">
+                    <ul id="pages-container">
+                        <li><a href="/index.html" rel="noreferrer noopener" class="button">Home</a></li>
+                        <li><a href="/assets/Resume1.pdf" target="_blank" rel="noreferrer noopener" class="button">Résumé</a></li>
+                        <li><a href="/src/blog_list.html" rel="noreferrer noopener" class="button">Blog</a></li>
+                        <li><a href="/src/contact.html" rel="noreferrer noopener" class="button">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <header id="title-block-header">
+                <h1 class="title">Interesting Proof For The Sum of Powers of Two</h1>
+                <div id="subtitle">
+                    <span class="author">Emmet Spaeth - </span>
+                    <span class="date">Oct 01, 2026</span>
+                </div>
+            </header>
+
+            <div id="content">
+
+<h1 id="interesting-proof-for-the-sum-of-powers-of-two">Interesting
+Proof For The Sum of Powers of Two</h1>
+<!--
+$sum_(k=0)^n 2^k$ equal to $2^(n+1) - 1$
+-->
+<h2 id="why-is-the-sum-of-sum_k-0n2k-equal-to-2n-1---1">Why is the sum
+of <span class="math inline">\(\sum_{k = 0}^{n}2^{k}\)</span> equal to
+<span class="math inline">\(2^{n + 1} - 1\)</span>?</h2>
+<p>First, you write the terms of the summation</p>
+<p><span class="math display">\[
+\sum_{k = 0}^{n}2^{k} = 2^{0} + 2^{1} + 2^{2} + \cdots + 2^{n}
+\]</span></p>
+<!--
+$
+sum_(k=0)^n 2^k = 2^0 + 2^1 + 2^2 + dots + 2^n
+$
+-->
+<p>Then, you use a little trick and look at the summation in binary</p>
+<pre><code>            1  2^0
+           10  2^1
+          100  2^2
+         1000  2^3
+        10000  2^4
+       100000  2^5
+         ...
++  1000...000  2^n
+---------------------
+   1111...111</code></pre>
+<p>Notice what happens if you add <span class="math inline">\(1\)</span>
+to the sum.</p>
+<pre><code>  1111111111 // The sum up to 2^9
++          1
+------------
+ 10000000000 = 2^10</code></pre>
+<p>All of the bits flip over and you are left with the next power of
+<span class="math inline">\(2\)</span>. Now, going back to the decimal
+number system you get</p>
+<p><span class="math display">\[
+1 + \sum_{k = 0}^{n}2^{k} = 2^{n+1}
+\]</span></p>
+<p>Which after subtracting <span class="math inline">\(1\)</span> from
+both sides, leaves us with our proof.</p>
+<p><span class="math display">\[
+\sum_{k = 0}^{n}2^{k} = 2^{n+1} - 1
+\]</span></p>
+<p><em>What an odd number!</em></p>
+
+        </div>
+            <footer class="footer">
+                <p>&copy; 2026 Emmet Spaeth</p>
+            </footer>
+        </div>
+    </body>
+</html>
+
