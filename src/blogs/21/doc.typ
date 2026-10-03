@@ -1,6 +1,4 @@
-# Is it cheaper to leave the AC/heat on all night?
-
-**View this article as a [PDF](./doc.pdf)**
+= Is it cheaper to leave the AC/heat on all night?
 
 Heating a house or cooling it with air conditioning (AC) can get expensive. The
 fundamental idea is to create a temperature gradient between your house and the
@@ -28,13 +26,13 @@ To compare the two strategies, let's represent the energy required to cool the
 house as a function of the current temperature.
 
 Let $E(t)$ be the energy to decrease the temperature of the house by 1 degree
-at temperature $t$. Let $t_(base)$ be the equilibrium temperature with the
-surrounding environment and $t_(target)$ be the desired temperature. Where
-$t_(base) > t_(target)$.
+at temperature $t$. Let $t_("base")$ be the equilibrium temperature with the
+surrounding environment and $t_("target")$ be the desired temperature. Where
+$t_("base") > t_("target")$.
 
 Assuming the temperature of the house increases by 1 degree an hour until it
-reaches equilibrium, the fundamental question is: Is $24*E(t_(target) + 1) <
-16*E(t_(target) + 1) + sum(i = t_(base) -> t_(target), E(i))$
+reaches equilibrium, the fundamental question is: Is $24*E(t_("target") + 1) <
+16*E(t_("target") + 1) + sum_(i = t_("base"))^(t_("target")) E(i)$
 
 > Assuming the temperature of the house increases at a rate of 1 degree per
 > hour is a broad assumption because the heating rate would be heavily impacted
@@ -45,7 +43,7 @@ To answer this question, we need to know the function $E(t)$. This function is
 dependent on a number of factors like the size of the house, the efficiency of
 the AC unit, or even the 
 
-## Assuming Linearity
+== Assuming Linearity
 
 The simplest case 
 
