@@ -65,11 +65,19 @@ Let's say you want to multiply $23$ by $10$. Our number system is in base ten,
 which means that $23$ gets shifted over into the ten's place giving you $230$.
 
 $$
-23 * 10 = 230
-230 * 10 = 2300
-2300 * 10 = 23000
-23000 / 10 = 2300
-2300 / 10 = 230
+23 * 10 = 230 
+$$
+$$
+230 * 10 = 2300 
+$$
+$$
+2300 * 10 = 23000 
+$$
+$$
+23000 / 10 = 2300 
+$$
+$$
+2300 / 10 = 230 
 $$
 
 Now let's say you want to multiply $23$ by $2$ resulting in $46$. Converting
