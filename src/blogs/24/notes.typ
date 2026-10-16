@@ -49,17 +49,20 @@ network.
 How much to change any given node $k$:
 
 $
-Delta w_k = mu delta_k a_i
+Delta w_k = delta_k a_i \
+w_k = w_k + eta Delta w_k
 $
 
 #grid(columns: 2, gutter: 0.5em,
     [$Delta w_k$],  [change in the weight $k$],
-    [$mu$],  [learning rate (a constant/hyper parameter)],
+    [$eta$],  [learning rate (a constant/hyper parameter)],
     [$delta_k$],  [the ending node's error],
     [$a_i$], [the incoming node's output],
 )
 
 == How did we come up with this formula?
+
+=== For a node on the output layer
 
 To figure out how much a give node contributes to the network's error.
 
@@ -111,7 +114,55 @@ $
 $
 Delta w_k = (partial E) / (partial w_k) = (partial E) / (partial a_k) dot
     (partial a_k) / (partial S_k) dot (partial S_k) / (partial w_k) \
-Delta w_k = (t_(k_1) - a_(k_1)) (f'(S_(k_1))) (a_(k_2))
+Delta w_k = (t_(k_1) - a_(k_1)) (f'(S_(k_1))) (a_(k_2)) \
+w_k = w_k + eta Delta w_k
 $
+
+#pagebreak()
+
+=== For a weight going to and from arbitrary nodes
+
+$
+E("the whole network") = E(a_4) + E(a_5) \
+= sum_(i="out") E(a_i), "where out is the set of output indices" {4, 5} "in this network"
+$
+
+For an arbitrary weight $w_k$ where $0 <= k <= n$.
+
+$
+(partial E) / (partial w_k) = partial / (partial w_k) ( E(a_4) + E(a_5))
+= (partial E(a_4)) / (partial w_k) + (partial E(a_5)) / (partial w_k)
+$
+
+Solving for $(partial E(a_4)) / (partial w_k)$ first, you will need:
+
+$
+a_4 = f(S_4) "      " E(a_4) = (t_0 - a_4) "      " S_4 = sum_(i=0)^n w_i a_i
+$
+
+$
+partial / (partial w_k) ( E(a_4) ) \ 
+= partial / (partial w_k) (t_0 - a_4) \ 
+= partial / (partial w_k) (t_0 - f(S_4)) \ 
+= partial / (partial w_k) (t_0 - f(sum_(i=0)^n w_i a_i)) \ 
+= partial / (partial w_k) (t_0 - f(sum_(i=0)^n w_i a_i)) \ 
+= partial / (partial w_k) (t_0 - f(w_0 a_0 + w_1 a_1 + ... + w_k a_k + ... + w_n a_n)) \ 
+= partial / (partial w_k) (t_0) - partial / (partial w_k) f(w_0 a_0 + w_1 a_1 + ... + w_k a_k + ... + w_n a_n) \ 
+$
+
+Derivative of $t_0$ w.r.t. $w_k$ is the derivative of a constant
+
+$
+= 0 - partial / (partial w_k) f(w_0 a_0 + w_1 a_1 + ... + w_k a_k + ... + w_n a_n) \ 
+$
+
+Applying the chain rule
+
+$
+= -f'(w_0 a_0 + w_1 a_1 + ... + w_k a_k + ... + w_n a_n) dot partial / (partial w_k) (w_0 a_0 + w_1 a_1 + ... + w_k a_k + ... + w_n a_n) \ 
+= -f'(w_0 a_0 + w_1 a_1 + ... + w_k a_k + ... + w_n a_n) dot (0 + 0 + ... + a_k + ... + 0) \
+= -f'(S_4) dot a_k 
+$
+
 
 
