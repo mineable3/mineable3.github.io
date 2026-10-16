@@ -14,16 +14,33 @@ h1 {
     list-style-type: none;
     gap: 0.9rem;
     letter-spacing: 0.01em;
-    align-self: left;
     font-size: 1.2em;
     padding: 0px 6%;
     margin: 0px;
 }
 
+.blog-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    min-width: 0;
+}
 
 .blog-link {
+    flex: 0 1 auto;          /* shrink when needed, don't grow */
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 1.0em;
     letter-spacing: 0.01em;
+}
+
+.blog-date {
+    flex: none;
+    white-space: nowrap;
+    margin-left: auto;       /* pushes the date to the right edge */
 }
 
 #flower3-img {
